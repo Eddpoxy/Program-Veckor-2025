@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                // If no food is left, break out of the loop
+                GameOver();
                 break;
             }
         }
@@ -130,5 +130,10 @@ public class GameManager : MonoBehaviour
     {
         currentDay++;
         StartDay(currentDay); // Start the next day
+    } 
+    private void GameOver()
+    {
+        Debug.Log("GameOver"); 
+        //bytt till en scen för GameOver och sen gå tillbaka till menyn
     }
 }
