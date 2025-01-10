@@ -37,4 +37,14 @@ public class Player : MonoBehaviour
     {
         hasAnswered = false;
     }
+
+    public bool HasPlayerAnswered()
+    {
+        return hasAnswered;
+    }
+
+    public void NotifyNPC()
+    {
+        Debug.Log("He knows");
+    }
 }
