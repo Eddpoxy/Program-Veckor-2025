@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour 
+
 {
+    public static GameManager Instance;
     [Header("Food Spawn")]
     public int Food;
     public List<GameObject> Foodprefab;
@@ -17,10 +19,22 @@ public class GameManager : MonoBehaviour
     private int currentDay = 0;
 
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this; // Ensure only one instance of GameManager exists
+        }
+        else
+        {
+            Destroy(gameObject); // Destroy duplicate instances
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(AddFood(15));
         // Detta bestämmer att dag 1 så kommer vi spawna npc 0, 1, 2 som ligger i listan
         dayNPCs[1] = new List<int> { 0, 1, 2 };
         StartDay(1);
