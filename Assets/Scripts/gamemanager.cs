@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int Food;
     public List<GameObject> Foodprefab;
     public Transform FoodSpawnPosition;
+    public float FoodSpawnSpeed;
     private List<GameObject> spawnedFoodObjects = new List<GameObject>();
     [Header("NPC Spawn & Days")]
     public Transform SpawnPosition;
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
     private Queue<int> currentDayQueue = new Queue<int>();
     private Dictionary<int, List<int>> dayNPCs = new Dictionary<int, List<int>>();
     private int currentDay = 0;
+    
+
 
 
     private void Awake()
@@ -68,7 +71,7 @@ public class GameManager : MonoBehaviour
             GameObject spawnedFood = Instantiate(randomFood, FoodSpawnPosition.transform.position, Quaternion.identity);
             spawnedFoodObjects.Add(spawnedFood);
 
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(FoodSpawnSpeed);
         }
     }
     
@@ -88,7 +91,7 @@ public class GameManager : MonoBehaviour
                 // Decrease the food counter
                 Food--;
 
-                yield return new WaitForSeconds(0.25f); // Delay between removing each food
+                yield return new WaitForSeconds(FoodSpawnSpeed); // Delay between removing each food
             }
             else
             {
@@ -117,23 +120,23 @@ public class GameManager : MonoBehaviour
     {
         while (currentDayQueue.Count > 0)
         {
-            int npcIndex = currentDayQueue.Dequeue(); // Get the next NPC from the queue
-            if (npcIndex >= 0 && npcIndex < NPCPrefabs.Count) // Ensure index is valid
+            int npcIndex = currentDayQueue.Dequeue();
+            if (npcIndex >= 0 && npcIndex < NPCPrefabs.Count && NPCPrefabs[npcIndex] != null)
             {
-                // Spawn the NPC and wait for it to be destroyed
+                // Instantiate the NPC
                 GameObject spawnedNPC = Instantiate(NPCPrefabs[npcIndex], SpawnPosition.position, Quaternion.identity);
                 yield return WaitForNPCDestruction(spawnedNPC);
             }
             else
             {
-                Debug.LogWarning($"Invalid NPC index: {npcIndex}");
+                Debug.LogWarning($"Invalid or null NPC prefab for index: {npcIndex}");
             }
+
         }
 
-        // Once all NPCs for the day are processed, transition to the next day
         Debug.Log("All NPCs for the day have been spawned and destroyed.");
-        yield return new WaitForSeconds(2f); // Optional delay before transitioning
-        NextDay(); // Start the next day
+        yield return new WaitForSeconds(2f);
+        NextDay();
     }
 
     private IEnumerator WaitForNPCDestruction(GameObject npc)
@@ -165,4 +168,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("GameOver"); 
         //bytt till en scen för GameOver och sen gå tillbaka till menyn
     }
+   
+
 }

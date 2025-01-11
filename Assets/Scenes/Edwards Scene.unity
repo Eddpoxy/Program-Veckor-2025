@@ -1133,11 +1133,12 @@ MonoBehaviour:
   - {fileID: 206714636}
   - {fileID: 1988022375}
   FoodSpawnPosition: {fileID: 477215352}
+  FoodSpawnSpeed: 0.1
   SpawnPosition: {fileID: 1825027296}
   NPCPrefabs:
   - {fileID: 3409642745463713889, guid: 2f8adbf2d54f29b4ebe0526423cb6297, type: 3}
-  - {fileID: 3409642745463713889, guid: 2f8adbf2d54f29b4ebe0526423cb6297, type: 3}
-  - {fileID: 1519062394}
+  - {fileID: 3409642745463713889, guid: 2b843da2dc134a04ea177ffa636f5efe, type: 3}
+  - {fileID: 3409642745463713889, guid: bc6b6c988cda6b345a8bfd4895885011, type: 3}
 --- !u!4 &1071711441
 Transform:
   m_ObjectHideFlags: 0

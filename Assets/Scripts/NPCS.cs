@@ -93,20 +93,14 @@ public class NPCS : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Y))
             {
                 Debug.Log(Dialogue[1]);  // Show the second dialogue choice if Y is pressed 
-                if (this is NPCVariant1 npcVariant1)
-                {
-                    npcVariant1.YesReply();
-                }
-                isChoosing = false;  // Stop the loop after a choice is made
+                YesReply();             // Call the YesReply method of the current NPC
+                isChoosing = false;     // Stop the loop after a choice is made
             }
             else if (Input.GetKeyDown(KeyCode.N))
             {
                 Debug.Log(Dialogue[2]);  // Show the third dialogue choice if N is pressed 
-                if (this is NPCVariant1 npcVariant1)
-                {
-                    npcVariant1.NoReply();
-                }
-                isChoosing = false;  // Stop the loop after a choice is made
+                NoReply();              // Call the NoReply method of the current NPC
+                isChoosing = false;     // Stop the loop after a choice is made
             }
 
             yield return null;  // Wait for the next frame
@@ -115,6 +109,15 @@ public class NPCS : MonoBehaviour
     public void ExitScene()
     {
         isExiting = true; // Set the flag to begin walking out of the scene
+    }
+    public virtual void YesReply()
+    {
+        Debug.Log("Default YesReply behavior in NPCS. Override this in specific variants.");
+    }
+
+    public virtual void NoReply()
+    {
+        Debug.Log("Default NoReply behavior in NPCS. Override this in specific variants.");
     }
 
 }
