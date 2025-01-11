@@ -36,8 +36,10 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(AddFood(15));
         // Detta bestämmer att dag 1 så kommer vi spawna npc 0, 1, 2 som ligger i listan
+        dayNPCs[0] = new List<int> { 0, 1, 2 };
         dayNPCs[1] = new List<int> { 0, 1, 2 };
-        StartDay(1);
+        StartDay(0);
+        Debug.Log($"Day {currentDay} started.");
     }
 
     // Update is called once per frame
@@ -128,7 +130,10 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        // Once all NPCs for the day are processed, transition to the next day
         Debug.Log("All NPCs for the day have been spawned and destroyed.");
+        yield return new WaitForSeconds(2f); // Optional delay before transitioning
+        NextDay(); // Start the next day
     }
 
     private IEnumerator WaitForNPCDestruction(GameObject npc)
@@ -143,7 +148,17 @@ public class GameManager : MonoBehaviour
     public void NextDay()
     {
         currentDay++;
-        StartDay(currentDay); // Start the next day
+
+        if (dayNPCs.ContainsKey(currentDay))
+        {
+            StartDay(currentDay); // Start the next day
+            Debug.Log($"Day {currentDay} started.");
+        }
+        else
+        {
+            Debug.Log($"No NPCs assigned for Day {currentDay}. End of the game or no data available.");
+           
+        }
     } 
     private void GameOver()
     {

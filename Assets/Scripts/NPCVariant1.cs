@@ -26,12 +26,12 @@ public class NPCVariant1 : NPCS
     public void YesReply()
     {
         GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(10));
-       // base.WalkOutScene();
+        ExitScene();
     }
     public void NoReply()
     {
-        Debug.Log("F OFFFFFFFFFF");
-        //base.WalkOutScene();
+
+        ExitScene();
     }
 
 }

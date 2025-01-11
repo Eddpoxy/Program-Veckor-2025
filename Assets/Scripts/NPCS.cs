@@ -7,10 +7,11 @@ public class NPCS : MonoBehaviour
     protected Player player;
     public List<string> Dialogue; // Dialogue list can be modified by variants
     public Transform EntranceTransform; // The entrance position NPC will walk to 
-    //public Transform SpawnTransform; // The entrance position NPC will walk to
+    public Transform SpawnTransform; // The exit position NPC will walk to
     private float moveSpeed = 2f; // NPC movement speed
     private bool hasArrived = false;
-    private bool isChoosing = false; // Flag to track if player is choosing dialogue
+    private bool isChoosing = false; // Flag to track if player is choosing dialogue 
+    private bool isExiting = false;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -22,19 +23,24 @@ public class NPCS : MonoBehaviour
         {
             EntranceTransform = entranceObject.transform;
         } 
-        /*
+        
         GameObject SpawnObject = GameObject.Find("SpawnPosition");
         if (entranceObject != null)
         {
-            SpawnTransform = entranceObject.transform;
+            SpawnTransform = SpawnObject.transform;
         }
-        */
+        
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
-        // If EntranceTransform is available, make NPC walk towards it
+        if (isExiting)
+        {
+            WalkOutScene(); // Continuously move NPC toward the SpawnTransform
+            return;         // Skip the rest of the Update logic while exiting
+        }
+
         if (EntranceTransform != null && !hasArrived)
         {
             WalkIntoScene();
@@ -57,23 +63,22 @@ public class NPCS : MonoBehaviour
             }
         }
     } 
-    /*
+    
     protected virtual void WalkOutScene()
     {
-        if (EntranceTransform != null)
+        if (SpawnTransform != null)
         {
             transform.position = Vector3.MoveTowards(transform.position, SpawnTransform.position, moveSpeed * Time.deltaTime);
 
-            // Stop movement when close enough
+            // Stop movement and destroy NPC when it reaches SpawnTransform
             if (Vector3.Distance(transform.position, SpawnTransform.position) < 0.1f)
             {
-                hasArrived = true;  // Set the flag to true once the NPC has arrived
-                Debug.Log("Reached entrance");
-                StartCoroutine(ShowDialogueChoices()); // Show dialogue choices after arrival
+                Debug.Log("NPC exited the scene");
+                Destroy(gameObject);
             }
         }
     } 
-    */
+    
 
     // Coroutine to display the first dialogue and wait for the player's choice
     private IEnumerator ShowDialogueChoices()
@@ -106,6 +111,10 @@ public class NPCS : MonoBehaviour
 
             yield return null;  // Wait for the next frame
         }
+    }
+    public void ExitScene()
+    {
+        isExiting = true; // Set the flag to begin walking out of the scene
     }
 
 }
