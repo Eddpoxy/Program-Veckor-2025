@@ -45,7 +45,8 @@ public class NPCVariant1 : NPCS
         if (previousChoice == "No")
         {
             Debug.Log(Dialogue[0]); // Log the custom dialogue for this case
-            GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(10)); // Take 10 food automatically
+            GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(10)); // Take 10 food automatically 
+            yield return new WaitForSeconds(2);
             ExitScene(); // NPC leaves the scene
             yield break; // Skip the player's choice
         }
