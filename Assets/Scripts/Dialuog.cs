@@ -9,6 +9,8 @@ public class Dialuog : MonoBehaviour
     [SerializeField] private GameObject dialogueBow;
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private DialogueObject testDialogue;
+
+    private Responetemplate responseHandler;
     //private void Start()
     //{
     //  textLabel.text = "hello!\nThis is my secund line";
@@ -18,9 +20,10 @@ public class Dialuog : MonoBehaviour
     //GetComponent<Typewrittereffect>().Run(textToType: "This is a bit of text!\n Hello.", textLabel);
     //}
     private Typewrittereffect typewrittereffect;
-    private void Start()
+    public void Start()
     {
         typewrittereffect = GetComponent<Typewrittereffect>();
+        responseHandler = GetComponent<Responetemplate>();
         closeDialogueBox();
         showdDialogue(testDialogue);
     }
@@ -30,7 +33,7 @@ public class Dialuog : MonoBehaviour
         dialogueBow.SetActive(true);
         StartCoroutine(routine:StepThroughDialogue(dialogueObject));
     }
-    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
+    public IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
     {
        // yield return new WaitForSeconds(2);
         foreach (string dialogue in dialogueObject.Dialogue)
