@@ -12,13 +12,16 @@ public class GameManager : MonoBehaviour
     public Transform FoodSpawnPosition;
     public float FoodSpawnSpeed;
     private List<GameObject> spawnedFoodObjects = new List<GameObject>();
+    public int DailyFoodLoss;
     [Header("NPC Spawn & Days")]
     public Transform SpawnPosition;
     public List<GameObject> NPCPrefabs;
     private Queue<int> currentDayQueue = new Queue<int>();
     private Dictionary<int, List<int>> dayNPCs = new Dictionary<int, List<int>>();
     private int currentDay = 0;
-    
+    private Dictionary<int, string> npcChoices = new Dictionary<int, string>();
+
+
 
 
 
@@ -125,13 +128,20 @@ public class GameManager : MonoBehaviour
             {
                 // Instantiate the NPC
                 GameObject spawnedNPC = Instantiate(NPCPrefabs[npcIndex], SpawnPosition.position, Quaternion.identity);
+
+                // Set the npcID for the spawned NPC
+                NPCS npcScript = spawnedNPC.GetComponent<NPCS>();
+                if (npcScript != null)
+                {
+                    npcScript.npcID = npcIndex; // Use the index as a consistent ID
+                }
+
                 yield return WaitForNPCDestruction(spawnedNPC);
             }
             else
             {
                 Debug.LogWarning($"Invalid or null NPC prefab for index: {npcIndex}");
             }
-
         }
 
         Debug.Log("All NPCs for the day have been spawned and destroyed.");
@@ -151,6 +161,7 @@ public class GameManager : MonoBehaviour
     public void NextDay()
     {
         currentDay++;
+        StartCoroutine(RemoveFood(DailyFoodLoss));
 
         if (dayNPCs.ContainsKey(currentDay))
         {
@@ -168,6 +179,20 @@ public class GameManager : MonoBehaviour
         Debug.Log("GameOver"); 
         //bytt till en scen för GameOver och sen gå tillbaka till menyn
     }
-   
+    public void RecordChoice(int npcID, string choice)
+    {
+        npcChoices[npcID] = choice; // Store the choice
+    }
+
+    // Method to retrieve the player's previous choice for an NPC
+    public string GetChoice(int npcID)
+    {
+        if (npcChoices.ContainsKey(npcID))
+        {
+            return npcChoices[npcID]; // Return the stored choice
+        }
+        return null; // Return null if no choice exists for this NPC
+    }
+
 
 }

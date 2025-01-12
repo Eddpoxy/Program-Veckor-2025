@@ -12,12 +12,15 @@ public class NPCS : MonoBehaviour
     private bool hasArrived = false;
     private bool isChoosing = false; // Flag to track if player is choosing dialogue 
     private bool isExiting = false;
+    public int npcID;
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
         player = FindAnyObjectByType<Player>();
-        // Ensure that EntrancePosition exists in the scene
+        // Ensure that EntrancePosition exists in the scene 
+       
+
         GameObject entranceObject = GameObject.Find("EntrancePosition");
         if (entranceObject != null)
         {
@@ -28,8 +31,14 @@ public class NPCS : MonoBehaviour
         if (entranceObject != null)
         {
             SpawnTransform = SpawnObject.transform;
+        } 
+
+        string previousChoice = GameManager.Instance.GetChoice(npcID);
+        if (previousChoice != null)
+        {
+            Debug.Log($"NPC {npcID} remembers your choice: {previousChoice}");
         }
-        
+
     }
 
     // Update is called once per frame
@@ -81,7 +90,7 @@ public class NPCS : MonoBehaviour
     
 
     // Coroutine to display the first dialogue and wait for the player's choice
-    private IEnumerator ShowDialogueChoices()
+    protected virtual IEnumerator ShowDialogueChoices()
     {
         // Display the first dialogue line
         Debug.Log(Dialogue[0]);

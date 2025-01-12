@@ -27,7 +27,7 @@ public class NPCVariant2 : NPCS
     }
     public override void YesReply()
     {
-        Debug.Log("NPCVariant2.YesReply called. Adding food...");
+        
         GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(10));
         ExitScene();
     }

@@ -1134,6 +1134,7 @@ MonoBehaviour:
   - {fileID: 1988022375}
   FoodSpawnPosition: {fileID: 477215352}
   FoodSpawnSpeed: 0.1
+  DailyFoodLoss: 5
   SpawnPosition: {fileID: 1825027296}
   NPCPrefabs:
   - {fileID: 3409642745463713889, guid: 2f8adbf2d54f29b4ebe0526423cb6297, type: 3}
