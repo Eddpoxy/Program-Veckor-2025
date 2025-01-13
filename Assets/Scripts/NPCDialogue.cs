@@ -11,12 +11,8 @@ public class NPCDialog : MonoBehaviour
     [SerializeField] private Player playerAnswerDetector;
 
     [TextArea(2, 5)]
-    public string[] dialogLines =
-    {
-        "Hello! How are you today?",
-        "I’ve been looking for someone to sell me some scrap.",
-        "It’s hard to find good traders these days.",
-    };
+    public string[] dialogLines;
+
 
     [TextArea(2, 5)]
     public string dialog_1 = "Hello! How are you today";
