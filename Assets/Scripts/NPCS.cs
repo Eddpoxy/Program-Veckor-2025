@@ -55,20 +55,21 @@ public class NPCS : MonoBehaviour
         // Instantiate the TextBubble prefab
         GameObject textBubble = Instantiate(textBubblePrefab, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
 
-        // Set the text on the text bubble (assuming it has a child Text component)
-        TextMesh textMesh = textBubble.GetComponentInChildren<TextMesh>();
-        if (textMesh != null)
+        // Find the Text component in the child objects of the prefab
+        TextMeshProUGUI textComponent = textBubble.GetComponentInChildren<TextMeshProUGUI>();
+        if (textComponent != null)
         {
-            textMesh.text = message; // Assign the message to the text bubble
+            textComponent.text = message; // Set the text to the dialogue message
         }
         else
         {
-            Debug.LogWarning("TextMesh component not found in TextBubble prefab!");
+            Debug.LogWarning("Text component not found in TextBubble prefab!");
         }
 
-        // Optionally destroy the text bubble after a few seconds
-        Destroy(textBubble, 3f);
+        // Store the current text bubble to destroy it later
+        currentTextBubble = textBubble;
     }
+
 
     // Update is called once per frame
     protected virtual void Update()
@@ -112,11 +113,15 @@ public class NPCS : MonoBehaviour
             if (Vector3.Distance(transform.position, SpawnTransform.position) < 0.1f)
             {
                 Debug.Log("NPC exited the scene");
+                if (currentTextBubble != null)
+                {
+                    Destroy(currentTextBubble);
+                }
                 Destroy(gameObject);
             }
         }
-    } 
-    
+    }
+
 
     // Coroutine to display the first dialogue and wait for the player's choice
     protected virtual IEnumerator ShowDialogueChoices()
@@ -130,20 +135,32 @@ public class NPCS : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Y))
             {
+                // Destroy the current text bubble after making a decision
+                if (currentTextBubble != null)
+                {
+                    Destroy(currentTextBubble);
+                }
+
                 ShowTextBubble(Dialogue[1]);  // Show the second dialogue choice if Y is pressed 
-                YesReply();                  // Call the YesReply method of the current NPC
-                isChoosing = false;          // Stop the loop after a choice is made
+                YesReply();                   // Call the YesReply method of the current NPC
+                isChoosing = false;           // Stop the loop after a choice is made
             }
             else if (Input.GetKeyDown(KeyCode.N))
             {
+                // Destroy the current text bubble after making a decision
+                if (currentTextBubble != null)
+                {
+                    Destroy(currentTextBubble);
+                }
+
                 ShowTextBubble(Dialogue[2]);  // Show the third dialogue choice if N is pressed 
-                NoReply();                   // Call the NoReply method of the current NPC
-                isChoosing = false;          // Stop the loop after a choice is made
+                NoReply();                    // Call the NoReply method of the current NPC
+                isChoosing = false;           // Stop the loop after a choice is made
             }
 
             yield return null;  // Wait for the next frame
         }
-    } 
+    }
 
     public void ExitScene()
     {
