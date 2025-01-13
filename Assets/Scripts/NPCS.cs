@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class NPCS : MonoBehaviour
@@ -13,10 +14,13 @@ public class NPCS : MonoBehaviour
     private bool isChoosing = false; // Flag to track if player is choosing dialogue 
     private bool isExiting = false;
     public int npcID;
+    public GameObject textBubblePrefab; 
+    private GameObject currentTextBubble;
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        textBubblePrefab = Resources.Load<GameObject>("TextBubble");
         player = FindAnyObjectByType<Player>();
         // Ensure that EntrancePosition exists in the scene 
        
@@ -39,6 +43,31 @@ public class NPCS : MonoBehaviour
             Debug.Log($"NPC {npcID} remembers your choice: {previousChoice}");
         }
 
+    }
+    protected void ShowTextBubble(string message)
+    {
+        if (textBubblePrefab == null)
+        {
+            Debug.LogWarning("TextBubble prefab is not assigned!");
+            return;
+        }
+
+        // Instantiate the TextBubble prefab
+        GameObject textBubble = Instantiate(textBubblePrefab, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+
+        // Set the text on the text bubble (assuming it has a child Text component)
+        TextMesh textMesh = textBubble.GetComponentInChildren<TextMesh>();
+        if (textMesh != null)
+        {
+            textMesh.text = message; // Assign the message to the text bubble
+        }
+        else
+        {
+            Debug.LogWarning("TextMesh component not found in TextBubble prefab!");
+        }
+
+        // Optionally destroy the text bubble after a few seconds
+        Destroy(textBubble, 3f);
     }
 
     // Update is called once per frame
@@ -93,7 +122,7 @@ public class NPCS : MonoBehaviour
     protected virtual IEnumerator ShowDialogueChoices()
     {
         // Display the first dialogue line
-        Debug.Log(Dialogue[0]);
+        ShowTextBubble(Dialogue[0]);
 
         // Wait for the player to press either "Y" or "N"
         isChoosing = true;  // Set the flag to indicate the player is choosing
@@ -101,24 +130,29 @@ public class NPCS : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Y))
             {
-                Debug.Log(Dialogue[1]);  // Show the second dialogue choice if Y is pressed 
-                YesReply();             // Call the YesReply method of the current NPC
-                isChoosing = false;     // Stop the loop after a choice is made
+                ShowTextBubble(Dialogue[1]);  // Show the second dialogue choice if Y is pressed 
+                YesReply();                  // Call the YesReply method of the current NPC
+                isChoosing = false;          // Stop the loop after a choice is made
             }
             else if (Input.GetKeyDown(KeyCode.N))
             {
-                Debug.Log(Dialogue[2]);  // Show the third dialogue choice if N is pressed 
-                NoReply();              // Call the NoReply method of the current NPC
-                isChoosing = false;     // Stop the loop after a choice is made
+                ShowTextBubble(Dialogue[2]);  // Show the third dialogue choice if N is pressed 
+                NoReply();                   // Call the NoReply method of the current NPC
+                isChoosing = false;          // Stop the loop after a choice is made
             }
 
             yield return null;  // Wait for the next frame
         }
-    }
+    } 
+
     public void ExitScene()
     {
         isExiting = true; // Set the flag to begin walking out of the scene
     }
+
+   
+
+
     public virtual void YesReply()
     {
         Debug.Log("Default YesReply behavior in NPCS. Override this in specific variants.");
