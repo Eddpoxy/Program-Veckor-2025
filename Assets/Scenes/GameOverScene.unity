@@ -328,6 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1040608234}
   - component: {fileID: 1040608237}
+  - component: {fileID: 1040608238}
   - component: {fileID: 1040608236}
   - component: {fileID: 1040608235}
   m_Layer: 5
@@ -400,13 +401,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: d52b416033b9f164daad7ec4a47fe0a6, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1040608238}
+        m_TargetAssemblyTypeName: Gameoverscene, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -508,7 +509,19 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040608233}
-  m_CullTransparentMesh: 1
+  m_CullTransparentMesh: 0
+--- !u!114 &1040608238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040608233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2dee35cb2deb54ebf3a23fa0f264f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1684397759
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,9 +600,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2029157334}
   - component: {fileID: 2029157337}
+  - component: {fileID: 2029157338}
   - component: {fileID: 2029157336}
   - component: {fileID: 2029157335}
-  - component: {fileID: 2029157338}
   m_Layer: 5
   m_Name: Startover
   m_TagString: Untagged
@@ -660,13 +673,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2029157333}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 2029157338}
+        m_TargetAssemblyTypeName: Gameoverscene, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -778,10 +791,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2029157333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d52b416033b9f164daad7ec4a47fe0a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c2dee35cb2deb54ebf3a23fa0f264f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  back: {fileID: 2029157333}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
