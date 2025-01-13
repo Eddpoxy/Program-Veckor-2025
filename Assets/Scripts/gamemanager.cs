@@ -2,28 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour 
+
 {
+    public static GameManager Instance;
     [Header("Food Spawn")]
     public int Food;
     public List<GameObject> Foodprefab;
     public Transform FoodSpawnPosition;
+    public float FoodSpawnSpeed;
     private List<GameObject> spawnedFoodObjects = new List<GameObject>();
+    public int DailyFoodLoss;
     [Header("NPC Spawn & Days")]
     public Transform SpawnPosition;
     public List<GameObject> NPCPrefabs;
     private Queue<int> currentDayQueue = new Queue<int>();
     private Dictionary<int, List<int>> dayNPCs = new Dictionary<int, List<int>>();
     private int currentDay = 0;
+    private Dictionary<int, string> npcChoices = new Dictionary<int, string>();
 
 
+
+
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this; // Ensure only one instance of GameManager exists
+        }
+        else
+        {
+            Destroy(gameObject); // Destroy duplicate instances
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(AddFood(15));
         // Detta bestämmer att dag 1 så kommer vi spawna npc 0, 1, 2 som ligger i listan
+        dayNPCs[0] = new List<int> { 0, 1, 2 };
         dayNPCs[1] = new List<int> { 0, 1, 2 };
-        StartDay(1);
+        StartDay(0);
+        Debug.Log($"Day {currentDay} started.");
     }
 
     // Update is called once per frame
@@ -52,7 +74,7 @@ public class GameManager : MonoBehaviour
             GameObject spawnedFood = Instantiate(randomFood, FoodSpawnPosition.transform.position, Quaternion.identity);
             spawnedFoodObjects.Add(spawnedFood);
 
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(FoodSpawnSpeed);
         }
     }
     
@@ -72,7 +94,7 @@ public class GameManager : MonoBehaviour
                 // Decrease the food counter
                 Food--;
 
-                yield return new WaitForSeconds(0.25f); // Delay between removing each food
+                yield return new WaitForSeconds(FoodSpawnSpeed); // Delay between removing each food
             }
             else
             {
@@ -101,20 +123,30 @@ public class GameManager : MonoBehaviour
     {
         while (currentDayQueue.Count > 0)
         {
-            int npcIndex = currentDayQueue.Dequeue(); // Get the next NPC from the queue
-            if (npcIndex >= 0 && npcIndex < NPCPrefabs.Count) // Ensure index is valid
+            int npcIndex = currentDayQueue.Dequeue();
+            if (npcIndex >= 0 && npcIndex < NPCPrefabs.Count && NPCPrefabs[npcIndex] != null)
             {
-                // Spawn the NPC and wait for it to be destroyed
+                // Instantiate the NPC
                 GameObject spawnedNPC = Instantiate(NPCPrefabs[npcIndex], SpawnPosition.position, Quaternion.identity);
+
+                // Set the npcID for the spawned NPC
+                NPCS npcScript = spawnedNPC.GetComponent<NPCS>();
+                if (npcScript != null)
+                {
+                    npcScript.npcID = npcIndex; // Use the index as a consistent ID
+                }
+
                 yield return WaitForNPCDestruction(spawnedNPC);
             }
             else
             {
-                Debug.LogWarning($"Invalid NPC index: {npcIndex}");
+                Debug.LogWarning($"Invalid or null NPC prefab for index: {npcIndex}");
             }
         }
 
         Debug.Log("All NPCs for the day have been spawned and destroyed.");
+        yield return new WaitForSeconds(2f);
+        NextDay();
     }
 
     private IEnumerator WaitForNPCDestruction(GameObject npc)
@@ -129,11 +161,38 @@ public class GameManager : MonoBehaviour
     public void NextDay()
     {
         currentDay++;
-        StartDay(currentDay); // Start the next day
+        StartCoroutine(RemoveFood(DailyFoodLoss));
+
+        if (dayNPCs.ContainsKey(currentDay))
+        {
+            StartDay(currentDay); // Start the next day
+            Debug.Log($"Day {currentDay} started.");
+        }
+        else
+        {
+            Debug.Log($"No NPCs assigned for Day {currentDay}. End of the game or no data available.");
+           
+        }
     } 
     private void GameOver()
     {
         Debug.Log("GameOver"); 
         //bytt till en scen för GameOver och sen gå tillbaka till menyn
     }
+    public void RecordChoice(int npcID, string choice)
+    {
+        npcChoices[npcID] = choice; // Store the choice
+    }
+
+    // Method to retrieve the player's previous choice for an NPC
+    public string GetChoice(int npcID)
+    {
+        if (npcChoices.ContainsKey(npcID))
+        {
+            return npcChoices[npcID]; // Return the stored choice
+        }
+        return null; // Return null if no choice exists for this NPC
+    }
+
+
 }
