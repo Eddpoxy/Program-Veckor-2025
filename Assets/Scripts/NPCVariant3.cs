@@ -42,6 +42,7 @@ public class NPCVariant3 : NPCS
 
         if (previousChoice == "Yes")
         {
+            ShowTextBubble(Dialogue[0]);
             Debug.Log(Dialogue[0]); // Log the custom dialogue for this case
             GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(10)); // Take 10 food automatically 
             GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(5)); // Take 10 food automatically  
