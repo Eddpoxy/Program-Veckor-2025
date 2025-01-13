@@ -12,12 +12,12 @@ public class mainmenuscript : MonoBehaviour
     {
   
     }
-    public void playgame()
+    private void playgame()
     {
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); // Laddar scener eller nivår för spelet
     }
-    public void quitgame()
+    private void quitgame()
     {
         Application.Quit();
 

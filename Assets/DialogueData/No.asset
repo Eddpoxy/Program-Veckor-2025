@@ -13,14 +13,7 @@ MonoBehaviour:
   m_Name: No
   m_EditorClassIdentifier: 
   dialogue:
-  - 'sigma sigms
+  - 'You said no
 
-    rixx
-
-    skk'
-  - "ekjaejn \nnjenanjd \naneiiodea"
-  - 'lllllll
-
-    lllll
-
-    lllll'
+'
+  responses: []

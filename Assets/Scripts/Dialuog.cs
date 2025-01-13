@@ -20,7 +20,7 @@ public class Dialuog : MonoBehaviour
     //GetComponent<Typewrittereffect>().Run(textToType: "This is a bit of text!\n Hello.", textLabel);
     //}
     private Typewrittereffect typewrittereffect;
-    public void Start()
+    private void Start()
     {
         typewrittereffect = GetComponent<Typewrittereffect>();
         responseHandler = GetComponent<Responetemplate>();
@@ -33,16 +33,35 @@ public class Dialuog : MonoBehaviour
         dialogueBow.SetActive(true);
         StartCoroutine(routine:StepThroughDialogue(dialogueObject));
     }
-    public IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
+    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
     {
        // yield return new WaitForSeconds(2);
-        foreach (string dialogue in dialogueObject.Dialogue)
+        //foreach (string dialogue in dialogueObject.Dialogue)
+        //{
+        //    yield return typewrittereffect.Run(dialogue, textLabel);
+        //    yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+        //}
+
+        for (int i =0; i< dialogueObject.dialogue.Length; i++)
         {
+            string dialogue = dialogueObject.Dialogue[i];
             yield return typewrittereffect.Run(dialogue, textLabel);
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+            if (i == dialogueObject.Dialogue.Length - 1 && dialogueObject.HasResponses) break;
+            
+                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+            
         }
 
-        closeDialogueBox();
+        if(dialogueObject.HasResponses)
+        {
+            responseHandler.ShowResponses(dialogueObject.Responses);
+              
+        }
+        else
+        {
+            closeDialogueBox();
+        }
+        
     }
     private void closeDialogueBox()
     {
