@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour 
 
@@ -20,6 +22,7 @@ public class GameManager : MonoBehaviour
     private Dictionary<int, List<int>> dayNPCs = new Dictionary<int, List<int>>();
     private int currentDay = 0;
     private Dictionary<int, string> npcChoices = new Dictionary<int, string>();
+    public TextMeshProUGUI DayCounterText;
 
 
 
@@ -51,6 +54,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DayCounterText.text = ("Day: " + currentDay);
         if (Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(RemoveFood(10));
@@ -173,12 +177,13 @@ public class GameManager : MonoBehaviour
             Debug.Log($"No NPCs assigned for Day {currentDay}. End of the game or no data available.");
            
         }
-    } 
+    }
     private void GameOver()
     {
-        Debug.Log("GameOver"); 
-        //bytt till en scen för GameOver och sen gå tillbaka till menyn
+        Debug.Log("GameOver");
+        SceneManager.LoadScene("GameOverScene"); // Byt till Game Over-scenen
     }
+
     public void RecordChoice(int npcID, string choice)
     {
         npcChoices[npcID] = choice; // Store the choice
@@ -193,6 +198,9 @@ public class GameManager : MonoBehaviour
         }
         return null; // Return null if no choice exists for this NPC
     }
+
+    
+
 
 
 }
