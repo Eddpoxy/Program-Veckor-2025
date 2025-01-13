@@ -50,7 +50,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4882291215675927992, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
       propertyPath: m_Name
-      value: NPC variant 1
+      value: NPC variant 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104206344635835776, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10116288
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104206344635835776, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10116288
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104206344635835776, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5188679
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1197870612371930876, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
@@ -59,14 +71,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4882291215675927992, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -1449143047386226889}
+      addedObject: {fileID: -1510737677599989438}
   m_SourcePrefab: {fileID: 100100000, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
 --- !u!1 &3409642745463713889 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4882291215675927992, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
   m_PrefabInstance: {fileID: 7822785526515473881}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-1449143047386226889
+--- !u!114 &-1510737677599989438
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,10 +87,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3409642745463713889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f783bf3b353d6d41b047cd880e40039, type: 3}
+  m_Script: {fileID: 11500000, guid: e20d554e43aba734da5f90482886a4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dialogue:
-  - 
+  Dialogue: []
   EntranceTransform: {fileID: 0}
   SpawnTransform: {fileID: 0}
+  npcID: 0
+  textBubblePrefab: {fileID: 0}

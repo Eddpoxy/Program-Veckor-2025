@@ -52,6 +52,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC variant 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7104206344635835776, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
+      propertyPath: m_Color.b
+      value: 0.59173834
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104206344635835776, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
+      propertyPath: m_Color.g
+      value: 0.26154026
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104206344635835776, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7169812
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1197870612371930876, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
     m_RemovedGameObjects: []
@@ -78,3 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80d059128de72a04ea317c673dcf0529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dialogue: []
+  EntranceTransform: {fileID: 0}
+  SpawnTransform: {fileID: 0}
+  npcID: 0
+  textBubblePrefab: {fileID: 0}
