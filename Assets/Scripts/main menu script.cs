@@ -4,23 +4,24 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class mainmenuscript : MonoBehaviour
-    
+
 {
     public GameObject back;
 
     void Start()
     {
-  
+
     }
-    private void playgame()
+    public void playgame()
     {
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); // Laddar scener eller nivår för spelet
     }
-    private void quitgame()
+    public void quitgame()
     {
         Application.Quit();
 
     }
 }
+
 
