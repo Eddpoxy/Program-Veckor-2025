@@ -13,14 +13,9 @@ MonoBehaviour:
   m_Name: Yes
   m_EditorClassIdentifier: 
   dialogue:
-  - 'sigma sigms
-
-    rixx
-
-    skk'
-  - "ekjaejn \nnjenanjd \naneiiodea"
-  - 'lllllll
-
-    lllll
-
-    lllll'
+  - you said yes
+  responses:
+  - responseText: Yes
+    dialogueObject: {fileID: 11400000}
+  - responseText: No
+    dialogueObject: {fileID: 11400000, guid: 63ae280484703ca409d1dce838d3d6a3, type: 2}

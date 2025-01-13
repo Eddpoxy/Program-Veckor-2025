@@ -12,5 +12,5 @@ public class Response
 
     public string ResponseText => responseText;
 
-    private DialogueObject DialogueObject => dialogueObject;
+    public DialogueObject DialogueObject => dialogueObject;
 }
