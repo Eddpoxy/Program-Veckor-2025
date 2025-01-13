@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     private Dictionary<int, List<int>> dayNPCs = new Dictionary<int, List<int>>();
     private int currentDay = 0;
     private Dictionary<int, string> npcChoices = new Dictionary<int, string>();
+    public TextMeshProUGUI DayCounterText;
 
 
 
@@ -52,6 +54,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DayCounterText.text = ("Day: " + currentDay);
         if (Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(RemoveFood(10));
