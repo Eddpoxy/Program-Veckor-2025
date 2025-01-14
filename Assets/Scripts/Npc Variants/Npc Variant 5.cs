@@ -28,7 +28,7 @@ public class NPCVariant5 : NPCS
         {
             Dialogue = new List<string>
             {
-                "Hey im tring to make it big in life but i need som food, can yoiu help me, i will make it worth ypur while   (20)",
+                "Hey im trying to make it big in life but i need some food, can you help me, i will make it worth ypur while   (20)",
                 "Thank you, i will be back",
                 "ok..."
             };
