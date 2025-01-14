@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(AddFood(15));
         // Detta bestämmer att dag 1 så kommer vi spawna npc 0, 1, 2 som ligger i listan
         dayNPCs[0] = new List<int> { 3, 1, 2, 0, 4 };
-        dayNPCs[1] = new List<int> { 0, 1, 2 };
+        dayNPCs[1] = new List<int> { 4, 0, 1, 2 };
         StartDay(0);
         Debug.Log($"Day {currentDay} started.");
     }
@@ -66,12 +66,13 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(AddFood(10));
         }
+      
     }
 
     public IEnumerator AddFood(int Amount)
     {
         Food += Amount;
-        for (int i = 0; i <= Amount; i++)
+        for (int i = 0; i < Amount; i++) // Change from i <= Amount to i < Amount
         {
             // Select a random GameObject from the FoodSprites list
             int randomIndex = Random.Range(0, Foodprefab.Count);
@@ -83,13 +84,14 @@ public class GameManager : MonoBehaviour
 
             yield return new WaitForSeconds(FoodSpawnSpeed);
         }
+
     }
-    
+
     public IEnumerator RemoveFood(int Amount)
     {
         for (int i = 0; i < Amount; i++)
         {
-            if (spawnedFoodObjects.Count > 0)
+            if (spawnedFoodObjects.Count > 0 && Food > 0) // Ensure food is available
             {
                 // Remove the oldest (first) food object in the list
                 GameObject foodToRemove = spawnedFoodObjects[0];
@@ -98,15 +100,10 @@ public class GameManager : MonoBehaviour
                 // Destroy the food GameObject
                 Destroy(foodToRemove);
 
-                // Decrease the food counter
-                Food--;
+                // Decrease the food counter, but ensure it doesn't go below 0
+                Food = Mathf.Max(0, Food - 1); // This ensures Food stays at 0 if it tries to go negative
 
                 yield return new WaitForSeconds(FoodSpawnSpeed); // Delay between removing each food
-            }
-            else
-            {
-                GameOver();
-                break;
             }
         }
     }
@@ -167,8 +164,13 @@ public class GameManager : MonoBehaviour
 
     public void NextDay()
     {
+        
         currentDay++;
         StartCoroutine(RemoveFood(DailyFoodLoss));
+        if (Food <= 0)
+        {
+            GameOver();
+        }
 
         if (dayNPCs.ContainsKey(currentDay))
         {
