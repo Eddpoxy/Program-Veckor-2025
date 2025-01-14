@@ -80,11 +80,13 @@ public class SideGamePlayer : MonoBehaviour
             Debug.Log("You found 1 scrap");
             scrapAmmount++;
             isTrashcan = false;
+            searchPrompt.text = "";
         }
         else
         {
             Debug.Log("Nothing was found");
             isTrashcan = false;
+            searchPrompt.text = "";
         }
     }
 }
