@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(AddFood(15));
         // Detta bestämmer att dag 1 så kommer vi spawna npc 0, 1, 2 som ligger i listan
-        dayNPCs[0] = new List<int> { 3, 1, 2, 0 };
+        dayNPCs[0] = new List<int> { 3, 1, 2, 0, 4 };
         dayNPCs[1] = new List<int> { 0, 1, 2 };
         StartDay(0);
         Debug.Log($"Day {currentDay} started.");

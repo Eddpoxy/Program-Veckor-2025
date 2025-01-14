@@ -12,9 +12,9 @@ public class NPCVariant2 : NPCS
 
         Dialogue = new List<string>
         {
-            "hi",
-            "here",
-            "damm"
+            "Woah you are like... Spherical man, I dont know where I am but im digging this place man ",
+            "I found all these cool stuff on the ground here, Take them man they are freakin awesome",
+            "Well ima borrow sum grub man i'll see you later"
         };
        
     }
