@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public Transform FoodSpawnPosition;
     public float FoodSpawnSpeed;
     private List<GameObject> spawnedFoodObjects = new List<GameObject>();
+    public TextMeshProUGUI FoodCounterText;
     public int DailyFoodLoss;
     [Header("NPC Spawn & Days")]
     public Transform SpawnPosition;
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     private int currentDay = 0;
     private Dictionary<int, string> npcChoices = new Dictionary<int, string>();
     public TextMeshProUGUI DayCounterText;
+    
 
 
 
@@ -55,6 +57,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         DayCounterText.text = ("Day: " + currentDay);
+        FoodCounterText.text = ("Food: " + Food);
         if (Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(RemoveFood(10));
