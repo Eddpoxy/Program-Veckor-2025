@@ -13,7 +13,7 @@ public class NPCVariant4 : NPCS
 
         Dialogue = new List<string>
         {
-            "Hello, Let's play a game! If i flip the coin and it lands om my side, ill take " + FoodAmount + " pieces of food but if it lands on the opposite ill give you the " + FoodAmount + " pieces instead",
+            "Hello, Wanna play a game? If i flip the coin and it lands on my side, ill take " + FoodAmount + " pieces of food but if it lands on the opposite ill give you the " + FoodAmount + " pieces instead",
             "Alright lets play",
             "Fine then, byeeee"
         };
@@ -27,7 +27,11 @@ public class NPCVariant4 : NPCS
         base.WalkIntoScene();
     }
     public override void YesReply()
-    { 
+    {
+        if (currentTextBubble != null)
+        {
+            Destroy(currentTextBubble); // Destroy the existing text bubble
+        }
         if (Random.value < 0.5f) // 50% chance
         {          
             GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(FoodAmount));
@@ -36,10 +40,13 @@ public class NPCVariant4 : NPCS
         else
         {
             GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(FoodAmount));
-            Dialogue[1] = "HahAHAH you SUCK!!!";
+            Dialogue[1] = "HahAHAH I WINNN!! you SUCK!!!";
         }
-        
-        ExitScene();
+        ShowTextBubble(Dialogue[1]);
+
+        // Exit after showing the dialogue
+        StartCoroutine(WaitForTextAndExit());
+        //ExitScene();
     }
     public override void NoReply()
     {

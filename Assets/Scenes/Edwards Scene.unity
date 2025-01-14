@@ -1662,6 +1662,7 @@ MonoBehaviour:
   - {fileID: 3409642745463713889, guid: 2f8adbf2d54f29b4ebe0526423cb6297, type: 3}
   - {fileID: 3409642745463713889, guid: 2b843da2dc134a04ea177ffa636f5efe, type: 3}
   - {fileID: 3409642745463713889, guid: bc6b6c988cda6b345a8bfd4895885011, type: 3}
+  - {fileID: 3409642745463713889, guid: 6367a3d43e2294d4ca434fa1cfab52e6, type: 3}
   DayCounterText: {fileID: 1234312863}
 --- !u!4 &1071711441
 Transform:

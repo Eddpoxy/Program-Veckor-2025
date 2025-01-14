@@ -185,7 +185,13 @@ public class NPCS : MonoBehaviour
     {
         isExiting = true;
     }
+    protected IEnumerator WaitForTextAndExit()
+    {
+        // Wait until the text finishes typing
+        yield return new WaitForSeconds(Dialogue[1].Length * 0.05f); // Adjust timing based on type speed
 
+        ExitScene(); // Exit after the dialogue is fully displayed
+    }
     public virtual void YesReply()
     {
         Debug.Log("Default YesReply behavior in NPCS. Override this in specific variants.");
