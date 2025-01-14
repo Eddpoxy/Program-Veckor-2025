@@ -15,7 +15,7 @@ public class NPCS : MonoBehaviour
     private bool isExiting = false;
     public int npcID;
     public GameObject textBubblePrefab;
-    private GameObject currentTextBubble;
+    protected GameObject currentTextBubble;
 
     public AudioClip TalkSound; // AudioClip for typing sounds
     private AudioSource audioSource; // AudioSource for playing sounds
