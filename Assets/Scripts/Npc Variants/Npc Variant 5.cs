@@ -14,7 +14,14 @@ public class NPCVariant5 : NPCS
         {
             Dialogue = new List<string>
             {
-                "Im back and i need food, but I´m not asking.   (13 food)"
+                "Im back and i need food, but I´m not asking. (13 food)"
+            };
+        }
+        else if (previousChoice == "Yes")
+        {
+            Dialogue = new List<string>
+            {
+                "Im back and Thank again for the food, i have earned som food and want to pay you back. (50 food)"
             };
         }
         else
@@ -41,9 +48,20 @@ public class NPCVariant5 : NPCS
             ExitScene();
             yield break;
         }
-
+        if (previousChoice == "Yes")
+        {
+            ShowTextBubble(Dialogue[0]);
+            Debug.Log(Dialogue[0]);
+            GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(50));
+            yield return new WaitForSeconds(2);
+            ExitScene();
+            yield break;
+        }
         yield return base.ShowDialogueChoices();
     }
+
+   
+
 
     public override void YesReply()
     {
