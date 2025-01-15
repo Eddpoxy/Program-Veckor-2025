@@ -60,6 +60,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Food <= 0)
+        {
+            GameOver();
+        }
         DayCounterText.text = ("Day: " + currentDay);
         FoodCounterText.text = ("Food: " + Food);
         if (Input.GetKeyDown(KeyCode.Space))
@@ -175,10 +179,7 @@ public class GameManager : MonoBehaviour
         
         currentDay++;
         StartCoroutine(RemoveFood(DailyFoodLoss));
-        if (Food <= 0)
-        {
-            GameOver();
-        }
+        
 
         if (dayNPCs.ContainsKey(currentDay))
         {
