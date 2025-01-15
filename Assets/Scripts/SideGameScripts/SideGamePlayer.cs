@@ -100,10 +100,10 @@ public class SideGamePlayer : MonoBehaviour
             scrapAmmount++;
             searchPrompt.text = "You found 1 scrap";
         }
-        else if(randomNumber <=100 && randomNumber >= 81)
+        else if(randomNumber <=100 && randomNumber >= 90)
         {
             Debug.Log("Oh Oh!");
-            searchPrompt.text = "You found a body";
+            searchPrompt.text = "You found a body!";
         }
         else
         {
