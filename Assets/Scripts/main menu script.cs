@@ -15,7 +15,7 @@ public class mainmenuscript : MonoBehaviour
     public void playgame()
     {
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -3); // Laddar scener eller nivår för spelet
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -2); // Laddar scener eller nivår för spelet
     }
     public void quitgame()
     {
