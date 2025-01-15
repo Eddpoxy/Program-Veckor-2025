@@ -1,18 +1,17 @@
-using System.Collections;
+
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using System.Security.Cryptography;
 
 public class SideGamePlayer : MonoBehaviour
 {
     private Rigidbody2D rB_Player;
-    public bool isTrashcan;
     public float moveSpeed = 5f;
     private Vector2 movement;
     public int scrapAmmount;
+
+    private GameObject currentTrashcan;
+    private Dictionary<GameObject, bool> searchedTrashcans = new Dictionary<GameObject, bool>();
 
     [TextArea(2, 5)]
     public string prompt = "Press E to search";
@@ -22,7 +21,6 @@ public class SideGamePlayer : MonoBehaviour
     void Start()
     {
         rB_Player = GetComponent<Rigidbody2D>();
-        isTrashcan = false;
         searchPrompt.text = "";
         scrapCount.text = "Scrap: " + scrapAmmount;
         scrapAmmount = 0;
@@ -38,9 +36,20 @@ public class SideGamePlayer : MonoBehaviour
         if (Input.GetKey(KeyCode.A)) movement.x = -1f;
         if (Input.GetKey(KeyCode.S)) movement.y = -1f;    
         
-        if(isTrashcan && Input.GetKeyDown(KeyCode.E))
+        if(currentTrashcan != null && Input.GetKeyDown(KeyCode.E))
         {
-            Search();
+            if (!IsTrashcanSearched(currentTrashcan))
+            {
+                Search();
+                MarkTrashcanAsSearched(currentTrashcan);
+                
+            }
+            else
+            {
+                searchPrompt.text = "It's empty";
+            }
+
+          
         }
 
         scrapCount.text = "Scrap: " + scrapAmmount;
@@ -51,8 +60,18 @@ public class SideGamePlayer : MonoBehaviour
         if (collision.gameObject.CompareTag("Trashcan"))
         {
             Debug.Log("You suck ass");
-            isTrashcan = true;
-            searchPrompt.text = prompt;        
+            currentTrashcan = collision.gameObject;
+
+            if (!IsTrashcanSearched(currentTrashcan))
+            {
+                searchPrompt.text = prompt;
+            }
+            else
+            {
+                searchPrompt.text = "Empty";
+            }
+
+                 
         }
     }
 
@@ -60,8 +79,8 @@ public class SideGamePlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Trashcan"))
         {
+            currentTrashcan = null;
             searchPrompt.text = "";
-            isTrashcan = false;
         }
     }
 
@@ -72,21 +91,34 @@ public class SideGamePlayer : MonoBehaviour
 
     public void Search()
     {
-        int randomNumber = Random.Range(1, 11);
+        int randomNumber = Random.Range(1, 101);
         Debug.Log("Number generated" + randomNumber);
 
-        if(randomNumber <= 9)
+        if(randomNumber <= 70)
         {
             Debug.Log("You found 1 scrap");
             scrapAmmount++;
-            isTrashcan = false;
-            searchPrompt.text = "";
+            searchPrompt.text = "You found 1 scrap";
+        }
+        else if(randomNumber <=100 && randomNumber >= 81)
+        {
+            Debug.Log("Oh Oh!");
+            searchPrompt.text = "You found a body";
         }
         else
         {
             Debug.Log("Nothing was found");
-            isTrashcan = false;
-            searchPrompt.text = "";
+            searchPrompt.text = "Nothing was found";
         }
+    }
+
+    public bool IsTrashcanSearched(GameObject trashcan)
+    {
+        return searchedTrashcans.ContainsKey(trashcan) && searchedTrashcans[trashcan];
+    }
+
+    private void MarkTrashcanAsSearched(GameObject trashcan)
+    {
+        searchedTrashcans[trashcan] = true;
     }
 }
