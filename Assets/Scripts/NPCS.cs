@@ -64,7 +64,8 @@ public class NPCS : MonoBehaviour
             return;
         }
 
-        GameObject textBubble = Instantiate(textBubblePrefab, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+        GameObject textBubble = Instantiate(textBubblePrefab, transform.position + new Vector3(0, 2, 0), Quaternion.identity); 
+
 
         TextMeshProUGUI textComponent = textBubble.GetComponentInChildren<TextMeshProUGUI>();
         if (textComponent != null)
@@ -207,8 +208,16 @@ public class NPCS : MonoBehaviour
     }
     protected IEnumerator WaitForTextAndExit()
     {
-        // Wait until the text finishes typing
-        yield return new WaitForSeconds(Dialogue[1].Length * 0.05f); // Adjust timing based on type speed
+        if (Dialogue.Count > 1)
+        {
+            // Wait until the text finishes typing
+            yield return new WaitForSeconds(Dialogue[1].Length * 0.05f); // Adjust timing based on type speed
+        }
+        else
+        {
+            Debug.LogWarning("Dialogue doesn't have enough entries for proper exit timing.");
+            yield return new WaitForSeconds(2f); // Provide a fallback delay if Dialogue is shorter
+        }
 
         ExitScene(); // Exit after the dialogue is fully displayed
     }

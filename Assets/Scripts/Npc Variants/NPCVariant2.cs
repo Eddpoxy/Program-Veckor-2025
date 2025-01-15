@@ -29,12 +29,12 @@ public class NPCVariant2 : NPCS
     {
         
         GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(10));
-        ExitScene();
+        StartCoroutine(WaitForTextAndExit());
     }
     public override void NoReply()
     {
         GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(1));
-        ExitScene();
+        StartCoroutine(WaitForTextAndExit());
     }
 
 }

@@ -79,6 +79,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4882291215675927992, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
       insertIndex: -1
       addedObject: {fileID: -3380277100698105926}
+    - targetCorrespondingSourceObject: {fileID: 4882291215675927992, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1187674755546027258}
   m_SourcePrefab: {fileID: 100100000, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
 --- !u!1 &3409642745463713889 stripped
 GameObject:
@@ -102,7 +105,7 @@ MonoBehaviour:
   SpawnTransform: {fileID: 0}
   npcID: 0
   textBubblePrefab: {fileID: 0}
-  TalkSound: {fileID: 0}
+  TalkSound: {fileID: 8300000, guid: bb4887fd416a9934695ae052cf595949, type: 3}
 --- !u!82 &-3380277100698105926
 AudioSource:
   m_ObjectHideFlags: 0
@@ -199,3 +202,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1187674755546027258
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3409642745463713889}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 768686b6360212940809c9fd25afc536, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

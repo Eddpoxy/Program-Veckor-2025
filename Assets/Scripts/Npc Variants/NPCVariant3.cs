@@ -47,7 +47,7 @@ public class NPCVariant3 : NPCS
             GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(10)); // Take 10 food automatically 
             GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(5)); // Take 10 food automatically  
             yield return new WaitForSeconds(2);
-            ExitScene(); // NPC leaves the scene
+            StartCoroutine(WaitForTextAndExit());
             yield break; // Skip the player's choice
         }
 
@@ -58,12 +58,12 @@ public class NPCVariant3 : NPCS
     {
         GameManager.Instance.RecordChoice(npcID, "Yes");
         GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(10));
-        ExitScene();
+        StartCoroutine(WaitForTextAndExit());
     }
     public override void NoReply()
     {
         GameManager.Instance.RecordChoice(npcID, "No");
-        ExitScene();
+        StartCoroutine(WaitForTextAndExit());
     }
 
 }

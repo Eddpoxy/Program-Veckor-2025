@@ -8,7 +8,7 @@ public class NPCVariant4 : NPCS
     // Overriding Start to modify dialogue specific to NPCVariant1
     protected override void Start()
     {
-        FoodAmount = Random.Range(1, 10);
+        FoodAmount = Random.Range(2, 10);
         base.Start(); // Call base class Start to ensure EntranceTransform is set
 
         Dialogue = new List<string>
@@ -51,7 +51,7 @@ public class NPCVariant4 : NPCS
     public override void NoReply()
     {
         GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(1));
-        ExitScene();
+        StartCoroutine(WaitForTextAndExit());
     }
 
 }

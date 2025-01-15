@@ -14,7 +14,7 @@ public class NPCVariant5 : NPCS
         {
             Dialogue = new List<string>
             {
-                "Im back and i need food, but I´m not asking. (13 food)"
+                "Im back and i need food, but I´m not asking. (10 food)"
             };
         }
         else if (previousChoice == "Yes")
@@ -28,7 +28,7 @@ public class NPCVariant5 : NPCS
         {
             Dialogue = new List<string>
             {
-                "Hey im trying to make it big in life but i need some food, can you help me, i will make it worth ypur while   (20)",
+                "Hey im trying to make it big in life but i need some food, can you help me, i will make it worth your while   (20)",
                 "Thank you, i will be back",
                 "ok..."
             };
@@ -43,9 +43,9 @@ public class NPCVariant5 : NPCS
         {
             ShowTextBubble(Dialogue[0]);
             Debug.Log(Dialogue[0]);
-            GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(13));
+            GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(10));
             yield return new WaitForSeconds(2);
-            ExitScene();
+            StartCoroutine(WaitForTextAndExit());
             yield break;
         }
         if (previousChoice == "Yes")
@@ -54,7 +54,7 @@ public class NPCVariant5 : NPCS
             Debug.Log(Dialogue[0]);
             GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(50));
             yield return new WaitForSeconds(2);
-            ExitScene();
+            StartCoroutine(WaitForTextAndExit());
             yield break;
         }
         yield return base.ShowDialogueChoices();
@@ -67,13 +67,13 @@ public class NPCVariant5 : NPCS
     {
         GameManager.Instance.RecordChoice(npcID, "Yes");
         GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(20));
-        ExitScene();
+        StartCoroutine(WaitForTextAndExit());
     }
 
     public override void NoReply()
     {
         GameManager.Instance.RecordChoice(npcID, "No");
-        ExitScene();
+        StartCoroutine(WaitForTextAndExit());
     }
 
 }
