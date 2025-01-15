@@ -9,6 +9,7 @@ public class SideGamePlayer : MonoBehaviour
     public float moveSpeed = 5f;
     private Vector2 movement;
     public int scrapAmmount;
+    public bool isBody = false;
 
     private GameObject currentTrashcan;
     private Dictionary<GameObject, bool> searchedTrashcans = new Dictionary<GameObject, bool>();
@@ -44,6 +45,10 @@ public class SideGamePlayer : MonoBehaviour
                 MarkTrashcanAsSearched(currentTrashcan);
                 
             }
+            else if(isBody == true && Input.GetKey(KeyCode.E))
+            {
+                searchPrompt.text = "Better leave it";
+            }
             else
             {
                 searchPrompt.text = "It's empty";
@@ -66,6 +71,7 @@ public class SideGamePlayer : MonoBehaviour
             {
                 searchPrompt.text = prompt;
             }
+            
             else
             {
                 searchPrompt.text = "Empty";
@@ -104,6 +110,7 @@ public class SideGamePlayer : MonoBehaviour
         {
             Debug.Log("Oh Oh!");
             searchPrompt.text = "You found a body!";
+            isBody = true;
         }
         else
         {
