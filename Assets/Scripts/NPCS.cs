@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using DG.Tweening;
 
 public class NPCS : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class NPCS : MonoBehaviour
     private bool hasArrived = false;
     private bool isChoosing = false;
     private bool isExiting = false;
+    private bool isWalkingIn = false; // Add a flag to track if tween is active 
+    private bool isWalkingOut = false;
     public int npcID;
     public GameObject textBubblePrefab;
     protected GameObject currentTextBubble;
@@ -24,7 +27,8 @@ public class NPCS : MonoBehaviour
     {
         // Add an AudioSource component to the NPC
         audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.playOnAwake = false;
+        audioSource.playOnAwake = false; 
+
     }
 
     // Start is called before the first frame update
@@ -66,6 +70,7 @@ public class NPCS : MonoBehaviour
         if (textComponent != null)
         {
             StartCoroutine(TypeTextWithSound(message, textComponent));
+            PlayIdleAnimation(transform); // Play idle animation while the NPC is talking
         }
         else
         {
@@ -73,6 +78,7 @@ public class NPCS : MonoBehaviour
         }
 
         currentTextBubble = textBubble;
+
     }
 
     private IEnumerator TypeTextWithSound(string message, TextMeshProUGUI textComponent)
@@ -116,34 +122,48 @@ public class NPCS : MonoBehaviour
 
     protected virtual void WalkIntoScene()
     {
-        if (EntranceTransform != null)
+        if (EntranceTransform != null && !isWalkingIn)
         {
-            transform.position = Vector3.MoveTowards(transform.position, EntranceTransform.position, moveSpeed * Time.deltaTime);
+            isWalkingIn = true; // Set the flag to prevent re-triggering
 
-            if (Vector3.Distance(transform.position, EntranceTransform.position) < 0.1f)
-            {
-                hasArrived = true;  // Set the flag to true once the NPC has arrived
-                Debug.Log("Reached entrance");
-                StartCoroutine(ShowDialogueChoices()); // Show dialogue choices after arrival
-            }
+            transform.DOMove(EntranceTransform.position, 2f)
+                .SetEase(Ease.OutQuad) // Adjust ease for smooth entry
+                .OnComplete(() =>
+                {
+                    DOTween.Kill(transform); // Stop tweens safely
+                    Debug.Log("Reached entrance");
+                    hasArrived = true; // Update arrival status
+                    StartCoroutine(ShowDialogueChoices()); // Start dialogue sequence 
+                    transform.rotation = Quaternion.identity;
+                });
+
+            PlayWalkAnimation(transform);
+
         }
     } 
     
     protected virtual void WalkOutScene()
     {
-        if (SpawnTransform != null)
+        if (SpawnTransform != null && !isWalkingOut)
         {
-            transform.position = Vector3.MoveTowards(transform.position, SpawnTransform.position, moveSpeed * Time.deltaTime);
+            isWalkingOut = true; // Set the flag to prevent re-triggering
 
-            if (Vector3.Distance(transform.position, SpawnTransform.position) < 0.1f)
-            {
-                Debug.Log("NPC exited the scene");
-                if (currentTextBubble != null)
+            // Horizontal movement with bounce
+            transform.DOMoveX(SpawnTransform.position.x, 2f)
+                .SetEase(Ease.Linear)
+                .OnComplete(() =>
                 {
-                    Destroy(currentTextBubble);
-                }
-                Destroy(gameObject);
-            }
+                    Debug.Log("NPC exited the scene");
+
+                    DOTween.Kill(transform); // Stop tweens safely
+                    if (currentTextBubble != null)
+                    {
+                        Destroy(currentTextBubble);
+                    }
+                    Destroy(gameObject); // Destroy the NPC
+                });
+            // Add a bouncing effect while walking out
+            PlayWalkAnimation(transform);
         }
     }
 
@@ -191,6 +211,27 @@ public class NPCS : MonoBehaviour
         yield return new WaitForSeconds(Dialogue[1].Length * 0.05f); // Adjust timing based on type speed
 
         ExitScene(); // Exit after the dialogue is fully displayed
+    }
+    public void PlayWalkAnimation(Transform npcTransform)
+    {
+        // Bouncing animation
+        npcTransform.DOLocalMoveY(npcTransform.position.y + 0.2f, 0.15f)
+      .SetEase(Ease.OutQuad)
+      .SetLoops(-1, LoopType.Yoyo);
+
+        // Tilting sway animation (rotate on Z-axis back and forth)
+        npcTransform.DOLocalRotate(new Vector3(0, 0, 5f), 0.3f) // Tilt right
+            .SetEase(Ease.InOutSine)
+            .SetLoops(-1, LoopType.Yoyo) // Back and forth sway
+            .SetRelative(true); // Relative to current rotation
+    }
+    public void PlayIdleAnimation(Transform npcTransform)
+    {
+        // Idle Stretch Animation (slow stretch up and down on Y-axis)
+        npcTransform.DOScaleY(0.2f, 3f) // Stretch up
+            .SetEase(Ease.InOutSine)
+            .SetLoops(-1, LoopType.Yoyo) // Yoyo to stretch back and forth
+            .SetRelative(true); // Make sure it stretches relative to its original scale
     }
     public virtual void YesReply()
     {

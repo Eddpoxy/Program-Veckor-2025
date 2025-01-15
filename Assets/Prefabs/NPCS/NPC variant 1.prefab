@@ -99,7 +99,7 @@ MonoBehaviour:
   SpawnTransform: {fileID: 0}
   npcID: 0
   textBubblePrefab: {fileID: 0}
-  TalkSound: {fileID: 8300000, guid: bb4887fd416a9934695ae052cf595949, type: 3}
+  TalkSound: {fileID: 8300000, guid: 95f5191efff42e342aa60f33abbd4cbc, type: 3}
 --- !u!82 &3126961825657533003
 AudioSource:
   m_ObjectHideFlags: 0

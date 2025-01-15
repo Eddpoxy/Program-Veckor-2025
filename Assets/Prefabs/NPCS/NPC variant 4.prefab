@@ -194,4 +194,4 @@ MonoBehaviour:
   SpawnTransform: {fileID: 0}
   npcID: 0
   textBubblePrefab: {fileID: 0}
-  TalkSound: {fileID: 0}
+  TalkSound: {fileID: 8300000, guid: 95f5191efff42e342aa60f33abbd4cbc, type: 3}

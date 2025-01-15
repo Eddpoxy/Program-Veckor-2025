@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        DOTween.SetTweensCapacity(500, 50);
         if (Instance == null)
         {
             Instance = this; // Ensure only one instance of GameManager exists
@@ -48,7 +50,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(AddFood(15));
         // Detta bestämmer att dag 1 så kommer vi spawna npc 0, 1, 2 som ligger i listan
         dayNPCs[0] = new List<int> { 3, 1, 2, 0, 4 };
-        dayNPCs[1] = new List<int> { 4, 0, 1, 2 };
+        dayNPCs[1] = new List<int> { 0, 1, 2, 4 };
         StartDay(0);
         Debug.Log($"Day {currentDay} started.");
     }
