@@ -13,14 +13,12 @@ MonoBehaviour:
   m_Name: TEST
   m_EditorClassIdentifier: 
   dialogue:
-  - 'sigma sigms
-
-    rixx
-
-    skk'
-  - "ekjaejn \nnjenanjd \naneiiodea"
-  - 'lllllll
-
-    lllll
-
-    lllll'
+  - Its a hard world where only the smartest raccoons can survive
+  - but you have dreams of making your own bussines, a bussines of trash and trash
+    deals
+  - NOW GO OUT IN THE WORLD AND CREAT YOUR RACOON EMPIRE
+  responses:
+  - responseText: Y
+    dialogueObject: {fileID: 11400000, guid: a59b63f8eabd2354abf041a3dadd2ddd, type: 2}
+  - responseText: N
+    dialogueObject: {fileID: 11400000, guid: 63ae280484703ca409d1dce838d3d6a3, type: 2}

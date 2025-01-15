@@ -12,35 +12,40 @@ public class Responetemplate : MonoBehaviour
     [SerializeField] private RectTransform responseContainer;
 
     public Dialuog dialogueui;
-   
+
+    private Response[] currentResponses; // Store the current responses
+    private int currentResponseIndex = 0; // Track the selected response
+
     public void Start()
     {
         dialogueui = GetComponent<Dialuog>();
-      
+        
     }
-
     public void ShowResponses(Response[] responses)
     {
-      
         foreach(Response response in responses)
         {
-             Instantiate(responseButtonTemplate.gameObject, responseContainer);
-            gameObject.SetActive(true);
-            GetComponent<TMP_Text>().text = response.ResponseText;
-            if (Input.GetKeyDown(KeyCode.Y)) 
+            if (Input.GetKeyDown(KeyCode.Y))
             {
+                Debug.Log("you pressed Y");
                 OnpickedResponse(response);
+
             }
-            else
+            else if (Input.GetKeyDown(KeyCode.N))
             {
-                OnpickedResponse(response);
+                Debug.Log("you pressed N");
+                currentResponseIndex++;
+                if (currentResponseIndex >= currentResponses.Length)
+                {
+                    currentResponseIndex = 0; // Loop back to the first response
+                }
             }
         }
-        responseBox.gameObject.SetActive(true);
+
     }
-  
     public void OnpickedResponse(Response response)
     {
+        Debug.Log("responded");
         dialogueui.showdDialogue(response.DialogueObject);
     }
     

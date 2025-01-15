@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab71e4fc59bd557409dc379821869c8e, type: 3}
-  m_Name: Yes
+  m_Name: Deathscene
   m_EditorClassIdentifier: 
   dialogue:
-  - you said yes
+  - 
   responses: []
