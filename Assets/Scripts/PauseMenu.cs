@@ -34,7 +34,7 @@ public class PauseMenu : MonoBehaviour
     } 
     public void MainMenu()
     {
-        SceneManager.LoadScene("Leon Scene");
+        SceneManager.LoadScene("first start scene");
     }
     public void Return()
     {

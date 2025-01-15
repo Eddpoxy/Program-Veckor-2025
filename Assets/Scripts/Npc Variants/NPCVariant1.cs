@@ -35,11 +35,19 @@ public class NPCVariant1 : NPCS
 
         if (previousChoice == "No")
         {
-            ShowTextBubble(Dialogue[0]);
-            Debug.Log(Dialogue[0]);
-            GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(10));
-            yield return new WaitForSeconds(2);
-            ExitScene();
+            // Ensure the Dialogue list is populated as expected before showing the text
+            if (Dialogue.Count > 0)
+            {
+                ShowTextBubble(Dialogue[0]);
+                Debug.Log(Dialogue[0]);
+                GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(10));
+                yield return new WaitForSeconds(2);
+                StartCoroutine(WaitForTextAndExit());
+            }
+            else
+            {
+                Debug.LogWarning("Dialogue list is empty or improperly populated!");
+            }
             yield break;
         }
 
@@ -47,15 +55,16 @@ public class NPCVariant1 : NPCS
     }
 
     public override void YesReply()
-    {
-        GameManager.Instance.RecordChoice(npcID, "Yes");
+    { 
+   
+        GameManager.Instance.RecordChoice(npcID, "Yes"); 
         GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(10));
-        ExitScene();
+        StartCoroutine(WaitForTextAndExit());
     }
 
     public override void NoReply()
     {
         GameManager.Instance.RecordChoice(npcID, "No");
-        ExitScene();
+        StartCoroutine(WaitForTextAndExit());
     }
 }

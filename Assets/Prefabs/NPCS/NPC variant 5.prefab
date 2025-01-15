@@ -98,7 +98,7 @@ MonoBehaviour:
   SpawnTransform: {fileID: 0}
   npcID: 0
   textBubblePrefab: {fileID: 0}
-  TalkSound: {fileID: 0}
+  TalkSound: {fileID: 8300000, guid: bb4887fd416a9934695ae052cf595949, type: 3}
 --- !u!82 &3126961825657533003
 AudioSource:
   m_ObjectHideFlags: 0
@@ -108,7 +108,7 @@ AudioSource:
   m_GameObject: {fileID: 3409642745463713889}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 433eb080c48f61f46958b1233581604a, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
