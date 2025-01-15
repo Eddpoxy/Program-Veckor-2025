@@ -54,7 +54,7 @@ public class Dialuog : MonoBehaviour
 
         if(dialogueObject.HasResponses)
         {
-            responseHandler.ShowResponses(dialogueObject.Responses);
+           responseHandler.ShowResponses(dialogueObject.Responses);
               
         }
         else
