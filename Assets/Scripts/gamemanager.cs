@@ -66,7 +66,11 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(AddFood(10));
         }
-      
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
     }
 
     public IEnumerator AddFood(int Amount)
