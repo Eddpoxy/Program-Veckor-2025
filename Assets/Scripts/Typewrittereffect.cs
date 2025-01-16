@@ -5,7 +5,7 @@ using TMPro;
 
 public class Typewrittereffect : MonoBehaviour
 {
-    [SerializeField] private float TypewritterSpeed = 50f;
+    [SerializeField] private float TypewritterSpeed = 50f; //hastigheten den skriver
 
     public Coroutine Run(string textToType, TMP_Text textLabel)
     {
@@ -15,7 +15,6 @@ public class Typewrittereffect : MonoBehaviour
     private IEnumerator TypeText(string textToType, TMP_Text textLabel)
     {
         textLabel.text = string.Empty;
-       // yield return new WaitForSeconds(2);
         float t = 0;
         int charIndex = 0;
 
