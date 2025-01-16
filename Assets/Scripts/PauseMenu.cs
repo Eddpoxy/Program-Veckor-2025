@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
     private void Start()
     {
         PauseCanvas.SetActive(false);
+        Time.timeScale = 1; // Ensure timeScale is reset when the scene starts
     }
     void Update()
     {

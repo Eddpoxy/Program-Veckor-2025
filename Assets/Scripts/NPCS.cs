@@ -144,9 +144,11 @@ public class NPCS : MonoBehaviour
     } 
     
     protected virtual void WalkOutScene()
-    {
+    { 
+        
         if (SpawnTransform != null && !isWalkingOut)
         {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
             isWalkingOut = true; // Set the flag to prevent re-triggering
 
             // Horizontal movement with bounce

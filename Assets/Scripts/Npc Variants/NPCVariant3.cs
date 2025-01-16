@@ -14,16 +14,16 @@ public class NPCVariant3 : NPCS
         {
             Dialogue = new List<string>
         {
-            "Thanks for watching the food for me! As a thanks i'll give you some extra scrap i found today"
+            "Thanks for watching man. I'll share a bit as a thanks. But dont mention this to ANYONE!"
         };
         }
         else
         {
             Dialogue = new List<string>
         {
-            "Hey i have a lot of food and need to hide it. Can you just watch it for a day?",
-            "Thank you, DONT TOUCH IT",
-            "alright fair enough"
+            "Sup, I might done some pretty illegal stuff but I got a bunch of stuff I just need to hide for a while. Can you watch it for just a day or two?",
+            "Thanks man. If you touch it you're dead",
+            "Well then you are just another victim to me!"
         };
         }
        
@@ -44,7 +44,7 @@ public class NPCVariant3 : NPCS
         {
             ShowTextBubble(Dialogue[0]);
             Debug.Log(Dialogue[0]); // Log the custom dialogue for this case
-            GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(10)); // Take 10 food automatically 
+            GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(30)); // Take 10 food automatically 
             GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(5)); // Take 10 food automatically  
             yield return new WaitForSeconds(2);
             StartCoroutine(WaitForTextAndExit());
@@ -57,12 +57,13 @@ public class NPCVariant3 : NPCS
     public override void YesReply()
     {
         GameManager.Instance.RecordChoice(npcID, "Yes");
-        GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(10));
+        GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(30));
         StartCoroutine(WaitForTextAndExit());
     }
     public override void NoReply()
     {
         GameManager.Instance.RecordChoice(npcID, "No");
+        GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(10));
         StartCoroutine(WaitForTextAndExit());
     }
 

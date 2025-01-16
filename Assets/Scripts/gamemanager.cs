@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         // Detta bestämmer att dag 1 så kommer vi spawna npc 0, 1, 2 som ligger i listan
         dayNPCs[0] = new List<int> { 3, 1, 4};
         dayNPCs[1] = new List<int> { 0, 3, 2};
-        dayNPCs[3] = new List<int> { 4, 0, 2 };
+        dayNPCs[2] = new List<int> { 4, 0, 2 };
         StartDay(0);
         Debug.Log($"Day {currentDay} started.");
     } 
