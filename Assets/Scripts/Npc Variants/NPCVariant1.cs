@@ -18,7 +18,7 @@ public class NPCVariant1 : NPCS
                 "Beep, boop, im a goverment drone. All you food belongs to us"
             };
         }
-        if (previousChoice == "Yes")
+        else if (previousChoice == "Yes")
         {
             Dialogue = new List<string>
             {
@@ -42,36 +42,20 @@ public class NPCVariant1 : NPCS
 
         if (previousChoice == "No")
         {
-            // Ensure the Dialogue list is populated as expected before showing the text
-            if (Dialogue.Count > 0)
-            {
-                ShowTextBubble(Dialogue[0]);
-                Debug.Log(Dialogue[0]);
-                GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(15));
-                yield return new WaitForSeconds(2);
-                StartCoroutine(WaitForTextAndExit());
-            }
-            else
-            {
-                Debug.LogWarning("Dialogue list is empty or improperly populated!");
-            }
+            ShowTextBubble(Dialogue[0]);
+            Debug.Log(Dialogue[0]);
+            GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(15));
+            yield return new WaitForSeconds(2);
+            StartCoroutine(WaitForTextAndExit());
             yield break;
         }
         if (previousChoice == "Yes")
         {
-            // Ensure the Dialogue list is populated as expected before showing the text
-            if (Dialogue.Count > 0)
-            {
-                ShowTextBubble(Dialogue[0]);
-                Debug.Log(Dialogue[0]);
-                GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(3));
-                yield return new WaitForSeconds(2);
-                StartCoroutine(WaitForTextAndExit());
-            }
-            else
-            {
-                Debug.LogWarning("Dialogue list is empty or improperly populated!");
-            }
+            ShowTextBubble(Dialogue[0]);
+            Debug.Log(Dialogue[0]);
+            GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(3));
+            yield return new WaitForSeconds(2);
+            StartCoroutine(WaitForTextAndExit());
             yield break;
         }
         yield return base.ShowDialogueChoices();
