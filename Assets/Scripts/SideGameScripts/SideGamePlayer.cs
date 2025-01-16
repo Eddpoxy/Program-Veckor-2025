@@ -14,6 +14,8 @@ public class SideGamePlayer : MonoBehaviour
     private GameObject currentTrashcan;
     private Dictionary<GameObject, bool> searchedTrashcans = new Dictionary<GameObject, bool>();
 
+    private SpriteRenderer spriterenderer;
+
     [TextArea(2, 5)]
     public string prompt = "Press E to search";
 
@@ -25,6 +27,7 @@ public class SideGamePlayer : MonoBehaviour
         searchPrompt.text = "";
         scrapCount.text = "Scrap: " + scrapAmmount;
         scrapAmmount = 0;
+        spriterenderer = GetComponent<SpriteRenderer>();
 
     }
 
@@ -33,8 +36,16 @@ public class SideGamePlayer : MonoBehaviour
         movement = Vector2.zero;
 
         if (Input.GetKey(KeyCode.W)) movement.y = 1f;
-        if (Input.GetKey(KeyCode.D)) movement.x = 1f;
-        if (Input.GetKey(KeyCode.A)) movement.x = -1f;
+        if (Input.GetKey(KeyCode.D))
+        {
+            movement.x = 1f;
+            spriterenderer.flipX = true;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            movement.x = -1f;
+            spriterenderer.flipX = false;
+        }
         if (Input.GetKey(KeyCode.S)) movement.y = -1f;    
         
         if(currentTrashcan != null && Input.GetKeyDown(KeyCode.E))
