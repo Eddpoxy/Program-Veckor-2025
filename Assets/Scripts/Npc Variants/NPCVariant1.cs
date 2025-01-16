@@ -15,22 +15,22 @@ public class NPCVariant1 : NPCS
         {
             Dialogue = new List<string>
             {
-                "Beep, boop, im a goverment drone. All you food belongs to us"
+                "Beep, boop, I'm a goverment drone. All you food belongs to us"
             };
         }
         else if (previousChoice == "Yes")
         {
             Dialogue = new List<string>
             {
-                "Hi again my fellow enlightened induvidual! If anything happens i can always trust you my friend"
+                "Hi again my fellow enlightened induvidual! If anything happens I can always trust you my friend"
             };
         }
         else
         {
             Dialogue = new List<string>
             {
-                "I know stuff and theres something you don't know about. All of my kind are GOVERMENT DRONES!!! They know EVERYTHING and SPY on us. We are in DANGER!!! Please say you believe in me.",
-                "YES! Finally someone who believes in me!! Take some of my emergency food if they are gonna invade us",
+                "I know stuff and theres something you don't know about. All of my kind are GOVERMENT DRONES!!! They know EVERYTHING and SPY on us. We are in DANGER!!! I need some emergency food NOOWW!",
+                "YES! Finally someone who believes in me!! Trust me pal I got you when they gonna invade us",
                 "ONE DAY MY FRIEND, OOONNNNE DAY!!! YOU BETTER BE PREPEARED!!"
             };
         }
@@ -65,7 +65,7 @@ public class NPCVariant1 : NPCS
     { 
    
         GameManager.Instance.RecordChoice(npcID, "Yes"); 
-        GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(5));
+        GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(5));
         StartCoroutine(WaitForTextAndExit());
     }
 

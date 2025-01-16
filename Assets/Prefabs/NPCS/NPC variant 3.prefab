@@ -53,16 +53,20 @@ PrefabInstance:
       value: NPC variant 3
       objectReference: {fileID: 0}
     - target: {fileID: 7104206344635835776, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 738bafc4abe075e4a98e6940de87f89e, type: 3}
+    - target: {fileID: 7104206344635835776, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
       propertyPath: m_Color.b
-      value: 0.59173834
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7104206344635835776, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
       propertyPath: m_Color.g
-      value: 0.26154026
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7104206344635835776, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
       propertyPath: m_Color.r
-      value: 0.7169812
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1197870612371930876, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
