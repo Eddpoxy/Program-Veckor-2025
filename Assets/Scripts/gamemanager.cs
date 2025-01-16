@@ -26,7 +26,8 @@ public class GameManager : MonoBehaviour
     private int currentDay = 0;
     private Dictionary<int, string> npcChoices = new Dictionary<int, string>();
     public TextMeshProUGUI DayCounterText;
-    public Image DayTransition;
+    public Image DayTransition; 
+
     
 
 
@@ -61,7 +62,11 @@ public class GameManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            SceneManager.LoadScene("SideGame");
+        }
         if (Food <= 0)
         {
             GameOver();
