@@ -60,6 +60,7 @@ public class SideGamePlayer : MonoBehaviour
             else if(isBody == true && Input.GetKey(KeyCode.E))
             {
                 searchPrompt.text = "Better leave it";
+                isBody = false;
             }
             else
             {
@@ -82,6 +83,11 @@ public class SideGamePlayer : MonoBehaviour
             if (!IsTrashcanSearched(currentTrashcan))
             {
                 searchPrompt.text = prompt;
+            }
+            else if (!IsTrashcanSearched(currentTrashcan) && isBody == true)
+            {
+                searchPrompt.text = "Poor cat";
+                isBody = false;
             }
             
             else
