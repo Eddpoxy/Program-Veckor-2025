@@ -51,17 +51,6 @@ public class NPCVariant1 : NPCS
                 yield return new WaitForSeconds(2);
                 StartCoroutine(WaitForTextAndExit());
             }
-            else if (previousChoice == "Yes")
-            {
-                if (Dialogue.Count > 0)
-                {
-                    ShowTextBubble(Dialogue[0]);
-                    Debug.Log(Dialogue[0]);
-                    GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(3));
-                    yield return new WaitForSeconds(2);
-                    StartCoroutine(WaitForTextAndExit());
-                }
-            }
             else
             {
                 Debug.LogWarning("Dialogue list is empty or improperly populated!");
@@ -71,7 +60,14 @@ public class NPCVariant1 : NPCS
         if (previousChoice == "Yes")
         {
             // Ensure the Dialogue list is populated as expected before showing the text
-          
+            if (Dialogue.Count > 0)
+            {
+                ShowTextBubble(Dialogue[0]);
+                Debug.Log(Dialogue[0]);
+                GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(3));
+                yield return new WaitForSeconds(2);
+                StartCoroutine(WaitForTextAndExit());
+            }
             else
             {
                 Debug.LogWarning("Dialogue list is empty or improperly populated!");
