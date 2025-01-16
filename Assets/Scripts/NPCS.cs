@@ -27,7 +27,8 @@ public class NPCS : MonoBehaviour
     {
         // Add an AudioSource component to the NPC
         audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.playOnAwake = false; 
+        audioSource.playOnAwake = false;
+        audioSource.volume = 0.5f;
 
     }
 

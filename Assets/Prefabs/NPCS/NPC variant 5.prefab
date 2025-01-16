@@ -53,16 +53,20 @@ PrefabInstance:
       value: NPC variant 5
       objectReference: {fileID: 0}
     - target: {fileID: 7104206344635835776, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd1b6be4ad133ff4884f22853ebd28b2, type: 3}
+    - target: {fileID: 7104206344635835776, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7104206344635835776, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
       propertyPath: m_Color.g
-      value: 0.63842666
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7104206344635835776, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
       propertyPath: m_Color.r
-      value: 0.6509804
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1197870612371930876, guid: 40933a8e6321d764d8ec6b58d73ac5c4, type: 3}
@@ -98,7 +102,7 @@ MonoBehaviour:
   SpawnTransform: {fileID: 0}
   npcID: 0
   textBubblePrefab: {fileID: 0}
-  TalkSound: {fileID: 8300000, guid: bb4887fd416a9934695ae052cf595949, type: 3}
+  TalkSound: {fileID: 8300000, guid: aaa0a14f2c46ca94a80732e21b008b70, type: 3}
 --- !u!82 &3126961825657533003
 AudioSource:
   m_ObjectHideFlags: 0

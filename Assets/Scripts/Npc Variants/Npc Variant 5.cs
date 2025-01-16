@@ -14,22 +14,22 @@ public class NPCVariant5 : NPCS
         {
             Dialogue = new List<string>
             {
-                "Im back and i need food, but I´m not asking."
+                "I'm so broke right now so im just gonna steal from you now no matter what!!"
             };
         }
         else if (previousChoice == "Yes")
         {
             Dialogue = new List<string>
             {
-                "Im back and Thank again for the food, i have earned som food and want to pay you back."
+                "Hey what's up bub, Your little investement made it big time and now I own the biggest drug cartel in TOWN!!!! This wasn't possible without your help so have some for youself"
             };
         }
         else
         {
             Dialogue = new List<string>
             {
-                "Hey im trying to make it big in life but i need some food, can you help me, i will make it worth your while",
-                "Thank you, i will be back",
+                "Hey I'm trying to make it big in life but I need some food, can you help me? I will make it worth your while",
+                "Thank you, i will be back soon!!!",
                 "ok..."
             };
         }
