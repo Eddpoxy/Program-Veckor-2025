@@ -14,21 +14,21 @@ public class NPCVariant5 : NPCS
         {
             Dialogue = new List<string>
             {
-                "Im back and i need food, but I´m not asking. (10 food)"
+                "Im back and i need food, but I´m not asking."
             };
         }
         else if (previousChoice == "Yes")
         {
             Dialogue = new List<string>
             {
-                "Im back and Thank again for the food, i have earned som food and want to pay you back. (50 food)"
+                "Im back and Thank again for the food, i have earned som food and want to pay you back."
             };
         }
         else
         {
             Dialogue = new List<string>
             {
-                "Hey im trying to make it big in life but i need some food, can you help me, i will make it worth your while   (20)",
+                "Hey im trying to make it big in life but i need some food, can you help me, i will make it worth your while",
                 "Thank you, i will be back",
                 "ok..."
             };
@@ -43,7 +43,7 @@ public class NPCVariant5 : NPCS
         {
             ShowTextBubble(Dialogue[0]);
             Debug.Log(Dialogue[0]);
-            GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(10));
+            GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(8));
             yield return new WaitForSeconds(2);
             StartCoroutine(WaitForTextAndExit());
             yield break;
@@ -52,7 +52,7 @@ public class NPCVariant5 : NPCS
         {
             ShowTextBubble(Dialogue[0]);
             Debug.Log(Dialogue[0]);
-            GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(50));
+            GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(20));
             yield return new WaitForSeconds(2);
             StartCoroutine(WaitForTextAndExit());
             yield break;
@@ -66,7 +66,7 @@ public class NPCVariant5 : NPCS
     public override void YesReply()
     {
         GameManager.Instance.RecordChoice(npcID, "Yes");
-        GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(20));
+        GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(10));
         StartCoroutine(WaitForTextAndExit());
     }
 
