@@ -13,9 +13,9 @@ public class NPCVariant4 : NPCS
 
         Dialogue = new List<string>
         {
-            "Hello, Wanna play a game? If i flip the coin and it lands on my side, ill take " + FoodAmount + " pieces of food but if it lands on the opposite ill give you the " + FoodAmount + " pieces instead",
+            "Bhahaehh I giv " + FoodAmount + " pice or takke  " + FoodAmount + " pices mabe. Wan pley?",
             "Alright lets play",
-            "Fine then, byeeee"
+            "BUhu yu no fun, bieee"
         };
 
     }
@@ -35,12 +35,12 @@ public class NPCVariant4 : NPCS
         if (Random.value < 0.5f) // 50% chance
         {          
             GameManager.Instance.StartCoroutine(GameManager.Instance.AddFood(FoodAmount));
-            Dialogue[1] = "Alright you win sucker";
+            Dialogue[1] = "yuoho u winnne!!!";
         } 
         else
         {
             GameManager.Instance.StartCoroutine(GameManager.Instance.RemoveFood(FoodAmount));
-            Dialogue[1] = "HahAHAH I WINNN!! you SUCK!!!";
+            Dialogue[1] = "Wooaooawo I wun! yipe kiyaye!";
         }
         ShowTextBubble(Dialogue[1]);
 
