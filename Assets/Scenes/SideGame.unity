@@ -7925,6 +7925,7 @@ MonoBehaviour:
   moveSpeed: 5
   scrapAmmount: 0
   isBody: 0
+  body: {fileID: 2632668172106129677, guid: 69730500328a8524289139e805ff25c0, type: 3}
   prompt: Press E to search
   searchPrompt: {fileID: 572343832}
   scrapCount: {fileID: 1377212532}
