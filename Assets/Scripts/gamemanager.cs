@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour 
 
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     private int currentDay = 0;
     private Dictionary<int, string> npcChoices = new Dictionary<int, string>();
     public TextMeshProUGUI DayCounterText;
+    public Image DayTransition;
     
 
 
@@ -161,6 +163,7 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log("All NPCs for the day have been spawned and destroyed.");
+        Transition();
         yield return new WaitForSeconds(2f);
         NextDay();
     }
@@ -176,7 +179,7 @@ public class GameManager : MonoBehaviour
 
     public void NextDay()
     {
-        
+       
         currentDay++;
         StartCoroutine(RemoveFood(DailyFoodLoss));
         
@@ -212,8 +215,26 @@ public class GameManager : MonoBehaviour
         }
         return null; // Return null if no choice exists for this NPC
     }
+    private void Transition()
+    {
+        // Ensure the DayTransition image is enabled and visible
+        DayTransition.gameObject.SetActive(true);
 
-    
+        // Set initial transparency to fully transparent
+        Color initialColor = DayTransition.color;
+        initialColor.a = 0f;
+        DayTransition.color = initialColor;
+
+        // Animate the transparency to fully opaque, wait, then fade out
+        Sequence transitionSequence = DOTween.Sequence();
+        transitionSequence.Append(DayTransition.DOFade(1f, 1f)) // Fade to full visibility over 1 second
+                         .AppendInterval(1f) // Wait for 1 second while fully visible
+                         .Append(DayTransition.DOFade(0f, 1f)) // Fade back to transparency over 1 second
+                         .OnComplete(() => DayTransition.gameObject.SetActive(false)); // Disable the image after the transition
+
+    }
+
+
 
 
 
