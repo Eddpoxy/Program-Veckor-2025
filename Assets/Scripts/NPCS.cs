@@ -28,7 +28,7 @@ public class NPCS : MonoBehaviour
         // Add an AudioSource component to the NPC
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
-        audioSource.volume = 0.5f;
+        audioSource.volume = 0.3f;
 
     }
 
@@ -219,7 +219,7 @@ public class NPCS : MonoBehaviour
         else
         {
             Debug.LogWarning("Dialogue doesn't have enough entries for proper exit timing.");
-            yield return new WaitForSeconds(2f); // Provide a fallback delay if Dialogue is shorter
+            yield return new WaitForSeconds(7f); // Provide a fallback delay if Dialogue is shorter
         }
 
         ExitScene(); // Exit after the dialogue is fully displayed

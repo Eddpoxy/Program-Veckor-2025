@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(AddFood(15));
         // Detta bestämmer att dag 1 så kommer vi spawna npc 0, 1, 2 som ligger i listan
-        dayNPCs[0] = new List<int> { 3, 1, 4};
+        dayNPCs[0] = new List<int> { 1, 4, 3};
         dayNPCs[1] = new List<int> { 0, 3, 2};
         dayNPCs[2] = new List<int> { 4, 0, 2 };
         StartDay(0);
@@ -73,14 +73,7 @@ public class GameManager : MonoBehaviour
         }
         DayCounterText.text = ("Day: " + currentDay);
         FoodCounterText.text = ("Food: " + Food);
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(RemoveFood(10));
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            StartCoroutine(AddFood(10));
-        }
+      
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
