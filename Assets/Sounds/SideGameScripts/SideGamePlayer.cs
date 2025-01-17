@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SideGamePlayer : MonoBehaviour
 {
@@ -106,6 +107,10 @@ public class SideGamePlayer : MonoBehaviour
             currentTrashcan = null;
             searchPrompt.text = "";
         }
+        else if (collision.gameObject.CompareTag("Devil"))
+        {
+            SceneManager.LoadScene("GameOverScene");
+        }
     }
 
     private void FixedUpdate()
@@ -147,4 +152,6 @@ public class SideGamePlayer : MonoBehaviour
     {
         searchedTrashcans[trashcan] = true;
     }
+
+
 }
