@@ -2617,6 +2617,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Time: {fileID: 1241928160}
   TimeInSeconds: 60
+  Crack: {fileID: 1984356572906251757, guid: d7512c1a8bedb9947bae151bb7059012, type: 3}
+  Player: {fileID: 1894174733}
 --- !u!1001 &796949809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7173,6 +7175,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1718850850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1718850851}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1718850851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718850850}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.42661, y: -10.48954, z: -0.26463795}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1760577750
 GameObject:
   m_ObjectHideFlags: 0
@@ -9645,3 +9678,4 @@ SceneRoots:
   - {fileID: 1455874784}
   - {fileID: 825182089}
   - {fileID: 1055114021}
+  - {fileID: 1718850851}
