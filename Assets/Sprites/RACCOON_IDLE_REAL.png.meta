@@ -1,0 +1,1922 @@
+fileFormatVersion: 2
+guid: 6ae195698af637d47910aa8682a2d367
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6048
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0e53d0384fbfe4593b3db0e50bcd4f
+      internalID: -1327150587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_1
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 6048
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6879a20d7c2a49347bcc24555b3a6fcf
+      internalID: 326973679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_2
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 6048
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 795d9be1f912be849b68ec465f8c01ec
+      internalID: -36610420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_3
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 6048
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65de69c0aceeb443b074329dc12f89b
+      internalID: -407177283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_4
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 6048
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9deadb93e34d1a49a3f71bee54766ac
+      internalID: -286289089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_5
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 6048
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a2e93eb0dba58458914766e7aa82c7
+      internalID: -27659900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_6
+      rect:
+        serializedVersion: 2
+        x: 2568
+        y: 6048
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96936c2963c31f74c8d3ac0733ab0d9c
+      internalID: -2078282820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_7
+      rect:
+        serializedVersion: 2
+        x: 2996
+        y: 6048
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2d53cefaf6aba844abdc7596c7baf31
+      internalID: 1081072638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_8
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 6048
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08641f55053b924d88f5d8aad3ad927
+      internalID: 1333251481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5292
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f8a53b745259eb49af7b35ec54ff08e
+      internalID: 844121561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_10
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 5292
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5698ecff30095e24a94c783fe0dbcc81
+      internalID: -424023762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_11
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 5292
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 217e089129b5c0642bb6a909d24119a7
+      internalID: -824247409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_12
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 5292
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0168dd4261653dc44bcfb520605b8a18
+      internalID: 1964263028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_13
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 5292
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 164a7ee024d07ab428e4916472cb142c
+      internalID: 1659814730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_14
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 5292
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ac04ca09438e914f8abb4fbca0399e8
+      internalID: -1989158316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_15
+      rect:
+        serializedVersion: 2
+        x: 2568
+        y: 5292
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 237d16a3321912d4f898999f92f6d0fe
+      internalID: -311969797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_16
+      rect:
+        serializedVersion: 2
+        x: 2996
+        y: 5292
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1db37f80fc0331b49af7d93513c52b66
+      internalID: -1884104810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_17
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 5292
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9feac3e4e1db0df4da9abc96cb6fc8fb
+      internalID: -218341354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4536
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 992e6f3f9ec2d5c4b8bd7243d1685ead
+      internalID: -1550423722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_19
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 4536
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c6da7814c564b4782e1dbc2fcd202b
+      internalID: -830485060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_20
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 4536
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 752520e3fed170043a5c810189f1f90a
+      internalID: 264762291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_21
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 4536
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4e787fe46900e46b4b388f88a6f23a
+      internalID: 1293554440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_22
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 4536
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0d29dafd11d86f4f80a35aaa0953477
+      internalID: -347224149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_23
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 4536
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d9e4abc05bd20948b6018077868787a
+      internalID: -776922377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_24
+      rect:
+        serializedVersion: 2
+        x: 2568
+        y: 4536
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbdbc0e9dfe377a48b9b16badd8604d2
+      internalID: 1941903004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_25
+      rect:
+        serializedVersion: 2
+        x: 2996
+        y: 4536
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c1df4d9e464c564fbe8a8597f37b81a
+      internalID: -289039147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_26
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 4536
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f608976df188ff247ab4da0b9f29b60b
+      internalID: -1248384554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3780
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbdf642877c86624da707e328b4cbb7a
+      internalID: -492985027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_28
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 3780
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4c43f5b961b50342b04a3cf3c4dddb3
+      internalID: -40318226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_29
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 3780
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fa4404ea5b6421479475dbbde16fd4e
+      internalID: -948702948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_30
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 3780
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbe532d9b7e5f944e94ad16aea3d2a4b
+      internalID: 1237139728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_31
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 3780
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 075f46d15ae018a44a34049a1c362f5c
+      internalID: 510200560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_32
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 3780
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3437083e2f4b58a49ba8d432c2f2e049
+      internalID: 1919379748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_33
+      rect:
+        serializedVersion: 2
+        x: 2568
+        y: 3780
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b5848b021415146b1e0b286b55fee8
+      internalID: -1653626342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_34
+      rect:
+        serializedVersion: 2
+        x: 2996
+        y: 3780
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0a1705df6a4de41b984ef49228b17c
+      internalID: -182483476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_35
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 3780
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c1f7c47b57b76445a5ca90ed2e9b19e
+      internalID: 108394636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3024
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84039550debf84c498821268d9a15fc8
+      internalID: -1587845259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_37
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 3024
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b5ac798392cb147a3eb17da8520297
+      internalID: 875351294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_38
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 3024
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e58cd0c230e87e549a7fb90d714a6aaf
+      internalID: -357668577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_39
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 3024
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05845ed9140a3f247a6702ea9614031b
+      internalID: 1738093979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_40
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 3024
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee3fbbbc2c6db674f80442d737b568a7
+      internalID: 1519153468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_41
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 3024
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750d0d856410e7b42861010d98ebdec5
+      internalID: -499230394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_42
+      rect:
+        serializedVersion: 2
+        x: 2568
+        y: 3024
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e97ccb113196c749810fafc5f5c9d24
+      internalID: -1575650999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_43
+      rect:
+        serializedVersion: 2
+        x: 2996
+        y: 3024
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec46faf2c11c074b94429f919d79655
+      internalID: 142755453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_44
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 3024
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 497250cf20321a844aff36f0314a1709
+      internalID: 941129073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2268
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 494282165dae8264e86b5f0c848bd7bc
+      internalID: -190312641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_46
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 2268
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b274c06937797f4284fa8e8b9c13c5a
+      internalID: 881337808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_47
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 2268
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e8190e51fdd8c4cb6c24876f718d22
+      internalID: -775496602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_48
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 2268
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 550408f169b72cf418d4bba5de9404bb
+      internalID: -439012289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_49
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 2268
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4754141342cbaa4a9934c1ce98d3801
+      internalID: -2046436757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_50
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 2268
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b9c05d30ae4d6449e7e1bf65581239
+      internalID: -1235925250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_51
+      rect:
+        serializedVersion: 2
+        x: 2568
+        y: 2268
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b982156233080a542ace0203c35ab302
+      internalID: -876828038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_52
+      rect:
+        serializedVersion: 2
+        x: 2996
+        y: 2268
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aade9884a60305489d8ec4cb6f74740
+      internalID: -805162120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_53
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 2268
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e567aebabe4689841b7bff397e6bedd6
+      internalID: -779233281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1512
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 683b4b3ed1cf0b7439bbd4cd14616460
+      internalID: -1788269035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_55
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 1512
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 873918025edc7554da274e5a75037071
+      internalID: -958998477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_56
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 1512
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b630ce224ebf842a4606308aaa2b85
+      internalID: -1966973823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_57
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 1512
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cbb6df0b8fff394bb34f03cefdd7a06
+      internalID: -1713672219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_58
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 1512
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cf7dcba5868b444cb5515819244769e
+      internalID: 252403594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_59
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 1512
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447f7bc3dcdd49e488d6f25d1a3639a4
+      internalID: -1356919640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_60
+      rect:
+        serializedVersion: 2
+        x: 2568
+        y: 1512
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b308ccfe79b7fd488f46a6e67eaae92
+      internalID: 292960761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_61
+      rect:
+        serializedVersion: 2
+        x: 2996
+        y: 1512
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4393061fd8c7f1944893739825d20296
+      internalID: -1990250993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_62
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 1512
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2993c1340a08de74d8d503b583e8016f
+      internalID: -1779550149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 756
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac999674a327b7948be37697cd483fc4
+      internalID: -53623556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_64
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 756
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f1813e22df43414b883a0a1b1166288
+      internalID: -1705497453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_65
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 756
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b67cad53b9e8b944d9acc53c0251bd1c
+      internalID: 1561057157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_66
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 756
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba495575050cc340808b70af9c9a8e4
+      internalID: 1212503573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_67
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 756
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7df09cacefe1144cb18f72a562ce46b
+      internalID: 1296711305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_68
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 756
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 950d2ab90abee9f4680d4ac0b15fa42b
+      internalID: -1805128032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_69
+      rect:
+        serializedVersion: 2
+        x: 2568
+        y: 756
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2269ff4e27e3faf4e8377a76a8f5a50b
+      internalID: 1762890212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_70
+      rect:
+        serializedVersion: 2
+        x: 2996
+        y: 756
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b850e7a1734f0642a68dab055567782
+      internalID: -1653185083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_71
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 756
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8693003b8aee05c48bc4cfb92023fc27
+      internalID: 1579697146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d1c90d170f23804593fac782391ddbf
+      internalID: -1260596055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_73
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 0
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7032636c34cb6f4baba38ce46ba5131
+      internalID: -2014396948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_74
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 0
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c896992902847429311ca6398fc924
+      internalID: -303069738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_75
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 0
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ea83a26b85b69d4b9a236f0a06cdddd
+      internalID: 396776891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_76
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 0
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23c4069c390fe1c40af42c53c847c1b5
+      internalID: -1320664019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_77
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 0
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5236982b7631f84dae5d057272b0892
+      internalID: -1182063382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_78
+      rect:
+        serializedVersion: 2
+        x: 2568
+        y: 0
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3beeedbbb8b98cd41acb9cfebd8e5d8b
+      internalID: 632934450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_79
+      rect:
+        serializedVersion: 2
+        x: 2996
+        y: 0
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a34b83d7a93fa94ea1ad86846be6e0d
+      internalID: -736639731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RACCOON_IDLE_REAL_80
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 0
+        width: 428
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f5dde652a94fb40bd66dd072f48a80
+      internalID: 1907437817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      RACCOON_IDLE_REAL_0: -1327150587
+      RACCOON_IDLE_REAL_1: 326973679
+      RACCOON_IDLE_REAL_10: -424023762
+      RACCOON_IDLE_REAL_11: -824247409
+      RACCOON_IDLE_REAL_12: 1964263028
+      RACCOON_IDLE_REAL_13: 1659814730
+      RACCOON_IDLE_REAL_14: -1989158316
+      RACCOON_IDLE_REAL_15: -311969797
+      RACCOON_IDLE_REAL_16: -1884104810
+      RACCOON_IDLE_REAL_17: -218341354
+      RACCOON_IDLE_REAL_18: -1550423722
+      RACCOON_IDLE_REAL_19: -830485060
+      RACCOON_IDLE_REAL_2: -36610420
+      RACCOON_IDLE_REAL_20: 264762291
+      RACCOON_IDLE_REAL_21: 1293554440
+      RACCOON_IDLE_REAL_22: -347224149
+      RACCOON_IDLE_REAL_23: -776922377
+      RACCOON_IDLE_REAL_24: 1941903004
+      RACCOON_IDLE_REAL_25: -289039147
+      RACCOON_IDLE_REAL_26: -1248384554
+      RACCOON_IDLE_REAL_27: -492985027
+      RACCOON_IDLE_REAL_28: -40318226
+      RACCOON_IDLE_REAL_29: -948702948
+      RACCOON_IDLE_REAL_3: -407177283
+      RACCOON_IDLE_REAL_30: 1237139728
+      RACCOON_IDLE_REAL_31: 510200560
+      RACCOON_IDLE_REAL_32: 1919379748
+      RACCOON_IDLE_REAL_33: -1653626342
+      RACCOON_IDLE_REAL_34: -182483476
+      RACCOON_IDLE_REAL_35: 108394636
+      RACCOON_IDLE_REAL_36: -1587845259
+      RACCOON_IDLE_REAL_37: 875351294
+      RACCOON_IDLE_REAL_38: -357668577
+      RACCOON_IDLE_REAL_39: 1738093979
+      RACCOON_IDLE_REAL_4: -286289089
+      RACCOON_IDLE_REAL_40: 1519153468
+      RACCOON_IDLE_REAL_41: -499230394
+      RACCOON_IDLE_REAL_42: -1575650999
+      RACCOON_IDLE_REAL_43: 142755453
+      RACCOON_IDLE_REAL_44: 941129073
+      RACCOON_IDLE_REAL_45: -190312641
+      RACCOON_IDLE_REAL_46: 881337808
+      RACCOON_IDLE_REAL_47: -775496602
+      RACCOON_IDLE_REAL_48: -439012289
+      RACCOON_IDLE_REAL_49: -2046436757
+      RACCOON_IDLE_REAL_5: -27659900
+      RACCOON_IDLE_REAL_50: -1235925250
+      RACCOON_IDLE_REAL_51: -876828038
+      RACCOON_IDLE_REAL_52: -805162120
+      RACCOON_IDLE_REAL_53: -779233281
+      RACCOON_IDLE_REAL_54: -1788269035
+      RACCOON_IDLE_REAL_55: -958998477
+      RACCOON_IDLE_REAL_56: -1966973823
+      RACCOON_IDLE_REAL_57: -1713672219
+      RACCOON_IDLE_REAL_58: 252403594
+      RACCOON_IDLE_REAL_59: -1356919640
+      RACCOON_IDLE_REAL_6: -2078282820
+      RACCOON_IDLE_REAL_60: 292960761
+      RACCOON_IDLE_REAL_61: -1990250993
+      RACCOON_IDLE_REAL_62: -1779550149
+      RACCOON_IDLE_REAL_63: -53623556
+      RACCOON_IDLE_REAL_64: -1705497453
+      RACCOON_IDLE_REAL_65: 1561057157
+      RACCOON_IDLE_REAL_66: 1212503573
+      RACCOON_IDLE_REAL_67: 1296711305
+      RACCOON_IDLE_REAL_68: -1805128032
+      RACCOON_IDLE_REAL_69: 1762890212
+      RACCOON_IDLE_REAL_7: 1081072638
+      RACCOON_IDLE_REAL_70: -1653185083
+      RACCOON_IDLE_REAL_71: 1579697146
+      RACCOON_IDLE_REAL_72: -1260596055
+      RACCOON_IDLE_REAL_73: -2014396948
+      RACCOON_IDLE_REAL_74: -303069738
+      RACCOON_IDLE_REAL_75: 396776891
+      RACCOON_IDLE_REAL_76: -1320664019
+      RACCOON_IDLE_REAL_77: -1182063382
+      RACCOON_IDLE_REAL_78: 632934450
+      RACCOON_IDLE_REAL_79: -736639731
+      RACCOON_IDLE_REAL_8: 1333251481
+      RACCOON_IDLE_REAL_80: 1907437817
+      RACCOON_IDLE_REAL_9: 844121561
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
