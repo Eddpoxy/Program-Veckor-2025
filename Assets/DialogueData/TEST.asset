@@ -16,7 +16,8 @@ MonoBehaviour:
   - Its a hard world where only the smartest raccoons can survive
   - but you have dreams of making your own bussines, a bussines of trash and trash
     deals
-  - NOW GO OUT IN THE WORLD AND CREAT YOUR RACOON EMPIRE
+  - '"you are a homeless raccoon. One day you stumble upon a thats when you find
+    a broken down booth. Oh well, you might as well try to make a business."'
   responses:
   - responseText: Y
     dialogueObject: {fileID: 11400000, guid: a59b63f8eabd2354abf041a3dadd2ddd, type: 2}
