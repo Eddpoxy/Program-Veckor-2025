@@ -10,8 +10,6 @@ public class Timer : MonoBehaviour
     [SerializeField] private int TimeInSeconds = 60;
 
     private SpriteRenderer spriten;
-    [SerializeField] private GameObject Crack;
-    [SerializeField] private GameObject Player;
     private int currentTime;
 
     private void Start()
@@ -35,9 +33,6 @@ public class Timer : MonoBehaviour
         }
 
         Time.text = "Time's up!";
-
-        Instantiate<GameObject>(Crack, Player.transform.position, Quaternion.identity);
-
         SceneManager.LoadScene("first start scene");
     }
 }
