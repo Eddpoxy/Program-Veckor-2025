@@ -11,6 +11,7 @@ public class SideGamePlayer : MonoBehaviour
     public int scrapAmmount;
     public bool isBody = false;
 
+    [SerializeField] private GameObject body;
     private GameObject currentTrashcan;
     private Dictionary<GameObject, bool> searchedTrashcans = new Dictionary<GameObject, bool>();
 
@@ -59,6 +60,7 @@ public class SideGamePlayer : MonoBehaviour
             else if(isBody == true && Input.GetKey(KeyCode.E))
             {
                 searchPrompt.text = "Better leave it";
+                isBody = false;
             }
             else
             {
@@ -81,6 +83,11 @@ public class SideGamePlayer : MonoBehaviour
             if (!IsTrashcanSearched(currentTrashcan))
             {
                 searchPrompt.text = prompt;
+            }
+            else if (!IsTrashcanSearched(currentTrashcan) && isBody == true)
+            {
+                searchPrompt.text = "Poor cat";
+                isBody = false;
             }
             
             else
@@ -122,6 +129,7 @@ public class SideGamePlayer : MonoBehaviour
             Debug.Log("Oh Oh!");
             searchPrompt.text = "You found a body!";
             isBody = true;
+            Instantiate<GameObject>(body, currentTrashcan.transform.position, Quaternion.identity);
         }
         else
         {
