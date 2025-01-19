@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: TEST
   m_EditorClassIdentifier: 
   dialogue:
-  - Its a hard world where only the smartest raccoons can survive
+  - Its a hard world where only the smartest raccoons can survive, and sadly your
+    homless
   - but you have dreams of making your own bussines, a bussines of trash and trash
     deals
-  - '"you are a homeless raccoon. One day you stumble upon a thats when you find
-    a broken down booth. Oh well, you might as well try to make a business."'
+  - One day you stumble upon a broken down booth. Oh well, you might as well try
+    to make a business."
   responses:
   - responseText: Y
     dialogueObject: {fileID: 11400000, guid: a59b63f8eabd2354abf041a3dadd2ddd, type: 2}

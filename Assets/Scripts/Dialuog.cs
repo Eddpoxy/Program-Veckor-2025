@@ -2,7 +2,8 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class Dialuog : MonoBehaviour
 {
@@ -12,12 +13,15 @@ public class Dialuog : MonoBehaviour
 
     private Responetemplate responseHandler;
     private Typewrittereffect typewrittereffect;
-    private void Start()
+    public mainmenuscript Mainmenuscript;
+
+    public void Start()
     {
         typewrittereffect = GetComponent<Typewrittereffect>();
         responseHandler = GetComponent<Responetemplate>();
-        closeDialogueBox();
+       
         showdDialogue(testDialogue);
+        Mainmenuscript = GetComponent<mainmenuscript>();
     }
 
     public void showdDialogue(DialogueObject dialogueObject)
@@ -36,24 +40,27 @@ public class Dialuog : MonoBehaviour
             if (i == dialogueObject.Dialogue.Length - 1 && dialogueObject.HasResponses) break;
             
                 yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));//väntar tills man trycker space
-            
-        }
 
-        if(dialogueObject.HasResponses)
-        {
-           responseHandler.ShowResponses(dialogueObject.Responses);
-              
-        }
-        else
-        {
-            closeDialogueBox();
         }
         
+        closeDialogueBox();
+
+
+
+
+
     }
     private void closeDialogueBox()
     {
+        Debug.Log("ending dialouge");
         dialogueBow.SetActive(false);
         textLabel.text = string.Empty;
+        
+           Mainmenuscript.playgame();
+        
     }
+   
+
+
 
 }
