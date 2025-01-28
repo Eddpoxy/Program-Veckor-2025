@@ -8,15 +8,14 @@ public class mainmenuscript : MonoBehaviour
 {
     public GameObject back;
 
-    void Start()
-    {
-
-    }
-    public void playgame()
-    {
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1); // Laddar scener eller nivår för spelet
-    }
+    
+        public void playgame()
+        {
+            Debug.Log("switch to next scene");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Laddar scener eller nivår för spelet
+        }
+    
+    
     public void quitgame()
     {
         Application.Quit();
