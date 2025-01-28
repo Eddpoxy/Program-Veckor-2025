@@ -19,6 +19,7 @@ MonoBehaviour:
     deals
   - One day you stumble upon a broken down booth. Oh well, you might as well try
     to make a business."
+  - play game
   responses:
   - responseText: Y
     dialogueObject: {fileID: 11400000, guid: a59b63f8eabd2354abf041a3dadd2ddd, type: 2}

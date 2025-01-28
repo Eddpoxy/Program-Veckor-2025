@@ -24,19 +24,19 @@ public class Dialuog : MonoBehaviour
         Mainmenuscript = GetComponent<mainmenuscript>();
     }
 
-    public void showdDialogue(DialogueObject dialogueObject)
+    public void showdDialogue(DialogueObject dialogueObject)//visar Dialogue
     {
         dialogueBow.SetActive(true);
         StartCoroutine(routine:StepThroughDialogue(dialogueObject));
     }
-    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
+    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)//går igenom Dialogue
     {
      
 
         for (int i =0; i< dialogueObject.dialogue.Length; i++)
         {
             string dialogue = dialogueObject.Dialogue[i];
-            yield return typewrittereffect.Run(dialogue, textLabel);
+            yield return typewrittereffect.Run(dialogue, textLabel); 
             if (i == dialogueObject.Dialogue.Length - 1 && dialogueObject.HasResponses) break;
             
                 yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));//väntar tills man trycker space
