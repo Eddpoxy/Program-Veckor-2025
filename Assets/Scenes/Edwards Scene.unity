@@ -1865,6 +1865,7 @@ MonoBehaviour:
   - {fileID: 3409642745463713889, guid: bc6b6c988cda6b345a8bfd4895885011, type: 3}
   - {fileID: 3409642745463713889, guid: 6367a3d43e2294d4ca434fa1cfab52e6, type: 3}
   - {fileID: 3409642745463713889, guid: c793261169e47ad4c821dd879ef476a3, type: 3}
+  - {fileID: 3409642745463713889, guid: b1a9b4b5c55d743469b7315b63231967, type: 3}
   DayCounterText: {fileID: 1234312863}
   DayTransition: {fileID: 1038211206}
 --- !u!4 &1071711441
@@ -2652,7 +2653,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -286289089, guid: 6ae195698af637d47910aa8682a2d367, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
