@@ -39,19 +39,17 @@ public class GameManager : MonoBehaviour
         DOTween.SetTweensCapacity(500, 50);
         if (Instance == null)
         {
-            Instance = this; // Ensure only one instance of GameManager exists
+            Instance = this; 
         }
         else
         {
-            Destroy(gameObject); // Destroy duplicate instances
+            Destroy(gameObject); 
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(AddFood(15));
-        // Detta bestämmer att dag 1 så kommer vi spawna npc 0, 1, 2 som ligger i listan
         dayNPCs[0] = new List<int> { 1, 4, 3}; //{ 1, 4, 3};
         dayNPCs[1] = new List<int> { 0, 3, 2};
         dayNPCs[2] = new List<int> { 4, 0, 5};
@@ -60,7 +58,6 @@ public class GameManager : MonoBehaviour
     } 
 
 
-    // Update is called once per frame
     void Update()
     { 
         if (Input.GetKeyDown(KeyCode.X))
@@ -84,13 +81,11 @@ public class GameManager : MonoBehaviour
     public IEnumerator AddFood(int Amount)
     {
         Food += Amount;
-        for (int i = 0; i < Amount; i++) // Change from i <= Amount to i < Amount
+        for (int i = 0; i < Amount; i++) 
         {
-            // Select a random GameObject from the FoodSprites list
             int randomIndex = Random.Range(0, Foodprefab.Count);
             GameObject randomFood = Foodprefab[randomIndex];
 
-            // Instantiate the food and add it to the spawnedFoodObjects list
             GameObject spawnedFood = Instantiate(randomFood, FoodSpawnPosition.transform.position, Quaternion.identity);
             spawnedFoodObjects.Add(spawnedFood);
 
@@ -103,31 +98,27 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < Amount; i++)
         {
-            if (spawnedFoodObjects.Count > 0 && Food > 0) // Ensure food is available
+            if (spawnedFoodObjects.Count > 0 && Food > 0) 
             {
-                // Remove the oldest (first) food object in the list
                 GameObject foodToRemove = spawnedFoodObjects[0];
                 spawnedFoodObjects.RemoveAt(0);
 
-                // Destroy the food GameObject
                 Destroy(foodToRemove);
 
-                // Decrease the food counter, but ensure it doesn't go below 0
-                Food = Mathf.Max(0, Food - 1); // This ensures Food stays at 0 if it tries to go negative
+                Food = Mathf.Max(0, Food - 1); 
 
-                yield return new WaitForSeconds(FoodSpawnSpeed); // Delay between removing each food
+                yield return new WaitForSeconds(FoodSpawnSpeed); 
             }
         }
     }
 
     public void StartDay(int day)
     {
-        if (dayNPCs.ContainsKey(day)) // Check if the day exists
+        if (dayNPCs.ContainsKey(day)) 
         {
-            // Populate the queue with NPCs for the current day
+            
             currentDayQueue = new Queue<int>(dayNPCs[day]);
 
-            // Start spawning NPCs one by one
             StartCoroutine(SpawnNPCsSequentially());
         }
         else
@@ -142,14 +133,12 @@ public class GameManager : MonoBehaviour
             int npcIndex = currentDayQueue.Dequeue();
             if (npcIndex >= 0 && npcIndex < NPCPrefabs.Count && NPCPrefabs[npcIndex] != null)
             {
-                // Instantiate the NPC
                 GameObject spawnedNPC = Instantiate(NPCPrefabs[npcIndex], SpawnPosition.position, Quaternion.identity);
 
-                // Set the npcID for the spawned NPC
                 NPCS npcScript = spawnedNPC.GetComponent<NPCS>();
                 if (npcScript != null)
                 {
-                    npcScript.npcID = npcIndex; // Use the index as a consistent ID
+                    npcScript.npcID = npcIndex;
                 }
 
                 yield return WaitForNPCDestruction(spawnedNPC);
@@ -168,10 +157,9 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator WaitForNPCDestruction(GameObject npc)
     {
-        // Wait until the NPC is destroyed
         while (npc != null)
         {
-            yield return null; // Wait for the next frame
+            yield return null; 
         }
     }
 
@@ -184,7 +172,7 @@ public class GameManager : MonoBehaviour
 
         if (dayNPCs.ContainsKey(currentDay))
         {
-            StartDay(currentDay); // Start the next day
+            StartDay(currentDay); 
             Debug.Log($"Day {currentDay} started.");
         }
         else
@@ -196,39 +184,35 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("GameOver");
-        SceneManager.LoadScene("GameOverScene"); // Byt till Game Over-scenen
+        SceneManager.LoadScene("GameOverScene"); 
     }
 
     public void RecordChoice(int npcID, string choice)
     {
-        npcChoices[npcID] = choice; // Store the choice
+        npcChoices[npcID] = choice; 
     }
 
-    // Method to retrieve the player's previous choice for an NPC
     public string GetChoice(int npcID)
     {
         if (npcChoices.ContainsKey(npcID))
         {
-            return npcChoices[npcID]; // Return the stored choice
+            return npcChoices[npcID]; 
         }
-        return null; // Return null if no choice exists for this NPC
+        return null; 
     }
     private void Transition()
     {
-        // Ensure the DayTransition image is enabled and visible
         DayTransition.gameObject.SetActive(true);
 
-        // Set initial transparency to fully transparent
         Color initialColor = DayTransition.color;
         initialColor.a = 0f;
         DayTransition.color = initialColor;
 
-        // Animate the transparency to fully opaque, wait, then fade out
         Sequence transitionSequence = DOTween.Sequence();
-        transitionSequence.Append(DayTransition.DOFade(1f, 1f)) // Fade to full visibility over 1 second
-                         .AppendInterval(1f) // Wait for 1 second while fully visible
-                         .Append(DayTransition.DOFade(0f, 1f)) // Fade back to transparency over 1 second
-                         .OnComplete(() => DayTransition.gameObject.SetActive(false)); // Disable the image after the transition
+        transitionSequence.Append(DayTransition.DOFade(1f, 1f)) 
+                         .AppendInterval(1f) 
+                         .Append(DayTransition.DOFade(0f, 1f)) 
+                         .OnComplete(() => DayTransition.gameObject.SetActive(false)); 
 
     }
 

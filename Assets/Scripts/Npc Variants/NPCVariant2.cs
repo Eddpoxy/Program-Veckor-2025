@@ -5,10 +5,9 @@ using UnityEngine;
 public class NPCVariant2 : NPCS
 {
  
-    // Overriding Start to modify dialogue specific to NPCVariant1
     protected override void Start()
     {
-        base.Start(); // Call base class Start to ensure EntranceTransform is set
+        base.Start(); 
 
         Dialogue = new List<string>
         {
@@ -19,7 +18,7 @@ public class NPCVariant2 : NPCS
        
     }
 
-    // If you want to modify walk behavior, override WalkIntoScene here
+   
     protected override void WalkIntoScene()
     {
 

@@ -8,13 +8,13 @@ public class Gameoverscene : MonoBehaviour
     
     public void StartGame()
     {
-        SceneManager.LoadScene("Edwards Scene"); // Byt ut "GameScene" mot namnet på din spelscen
+        SceneManager.LoadScene("Edwards Scene"); 
     }
 
     public void QuitGame()
     {
         Debug.Log("Quit Game");
-        Application.Quit(); // Avslutar spelet (fungerar endast i byggd version)
+        Application.Quit();
     }
 }
 
