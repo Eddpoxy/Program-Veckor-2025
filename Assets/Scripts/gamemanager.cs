@@ -52,7 +52,8 @@ public class GameManager : MonoBehaviour
         StartCoroutine(AddFood(15));
         dayNPCs[0] = new List<int> { 1, 4, 3}; //{ 1, 4, 3};
         dayNPCs[1] = new List<int> { 0, 3, 2};
-        dayNPCs[2] = new List<int> { 4, 0, 5};
+        dayNPCs[2] = new List<int> { 4, 0, 2};
+        dayNPCs[3] = new List<int> {5};
         StartDay(0);
         Debug.Log($"Day {currentDay} started.");
     } 
@@ -123,7 +124,9 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            SceneManager.LoadScene("Win Scene");
             Debug.Log($"No NPCs assigned for Day {day}.");
+           
         }
     }
     private IEnumerator SpawnNPCsSequentially()
